@@ -1,9 +1,15 @@
 //colors
-$accent: '#fff';
+$black: #000;
+$white: #fff;
+$purple: #9c1de7;
+$blue: #00d1ff;
+$darkBlue: #482ff7;
+$green: #22eaaa;
 
 //imports
 @import 'Nav.scss';
 @import 'Start.scss';
 @import 'Login.scss';
 @import 'Cart.scss';
+@import 'Search.scss';
 

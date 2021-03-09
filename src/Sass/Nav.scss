@@ -1,5 +1,5 @@
 .navbar {
-  min-height: 10vh;
+  min-height: 15vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -8,13 +8,17 @@
   left: 0;
   right: 0;
   top: 0;
-  padding: 0rem 4rem;
 
-  .nav-list {
-    width: 100%;
-    list-style: none;
+  .right-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
-  }
+    justify-content: center;
+    align-items: center;
+
+        .nav-list {
+          list-style: none;
+          display: flex;
+          flex-direction: row;
+        }
+    }
 }
