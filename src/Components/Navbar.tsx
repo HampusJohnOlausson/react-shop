@@ -8,17 +8,17 @@ const Navbar = () => {
     return (
       <header className="navbar">
         <div className="left-container">
-          <Link to="/" style={{ textDecoration: "none", color: '#000' }}>
-            <h2>T-shirt Store</h2>
+          <Link to="/" style={{ textDecoration: "none", color: "#000" }}>
+              <i className="fas fa-headphones"></i>
           </Link>
         </div>
         <div className="right-container">
           <Search />
           <ul className="nav-list">
-            <Link to="/cart" >
-              <ShoppingBasket />
+            <Link to="/cart">
+              <ShoppingBasket style={{ margin: "0rem 2rem 0rem 4rem" }} />
             </Link>
-            <Link to="/user">
+            <Link to="/products">
               <PersonIcon />
             </Link>
           </ul>

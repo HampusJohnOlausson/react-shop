@@ -2,8 +2,8 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
 import Cart from './Cart'
+import Products from './Products/Products'
 import Start from './Start'
-import User from './User/User'
 
 
 const Main = () => {
@@ -13,8 +13,8 @@ const Main = () => {
           <Route exact path="/">
             <Start />
           </Route>
-          <Route path="/user">
-            <User/>
+          <Route path="/products">
+            <Products/>
           </Route>
           <Route path="/cart">
             <Cart />

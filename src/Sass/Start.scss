@@ -6,17 +6,34 @@
     flex-direction: column;
     justify-content: center;
 
-
     .text-container{
-        margin: 4rem;
-        .hero-text{
-            font-size: 4.5rem;
+        margin-left: 4rem;
+        padding: 0rem;
+
+        .company-name{
+            font-family: 'Caveat', cursive;
+            font-size: 4rem;
+            color: $purple;
             margin: 0rem;
+            text-shadow: 1px 1px 1px rgba(0, 0, 0, 01) ;
+            
+        }
+        .hero-text{
+            font-size: 4rem;
+            margin: 0rem 0rem;
+            padding: 0rem;
+
+            span{
+                color: $purple;
+            }
+            .middle{
+                color: $green
+            }
         }
         .under-text{
-            margin: 1rem 0rem;
+            margin:0rem 0rem 1rem;
             font-size: 1.4rem;
-            font-weight: 400;
+            font-weight: 300;
         }
     }
 }
