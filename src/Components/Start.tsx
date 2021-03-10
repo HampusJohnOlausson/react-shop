@@ -16,11 +16,14 @@ const Start = () => {
           <h5 className="under-text">
             Quality headphones for your unique style
           </h5>
-          <Link to="/products" style={{ textDecoration: 'none'}}>
+          <Link to="/products" style={{ textDecoration: "none" }}>
             <Button variant="contained" size="large" style={btnStyle}>
               Find your style
             </Button>
           </Link>
+        </div>
+        <div className="right-container">
+          <div className="circle"></div>
         </div>
       </main>
     );
