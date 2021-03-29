@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,7 +28,13 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     fontSize: "3rem",
+    cursor: 'pointer',
   },
+  link: {
+    textDecoration: 'none',
+    color: '#fff'
+
+  }
 }));
 
 const Navbar = () => {
@@ -38,10 +45,18 @@ const Navbar = () => {
       <header className={classes.root}>
         <nav className={classes.nav}>
           <ul className={classes.list}>
-            <li className={classes.home}>R</li>
-            <li style={{ marginTop: "1rem" }}>Meny</li>
-            <li style={{ marginTop: "1rem" }}>Boka Bord</li>
-            <li style={{ marginTop: "1rem" }}>Kontakt</li>
+            <Link to="/" className={classes.link}>
+              <li className={classes.home}>R</li>
+            </Link>
+            <Link to="/menu" className={classes.link}>
+              <li style={{ marginTop: "1rem" }}>Meny</li>
+            </Link>
+            <Link to="/reservation" className={classes.link}>
+              <li style={{ marginTop: "1rem" }}>Boka Bord</li>
+            </Link>
+            <Link to="/contact" className={classes.link}>
+              <li style={{ marginTop: "1rem" }}>Kontakt</li>
+            </Link>
             <li className={classes.icon}>
               <i className="fab fa-twitter"></i>
             </li>
