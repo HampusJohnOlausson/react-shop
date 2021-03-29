@@ -3,31 +3,30 @@ import React from 'react'
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    minHeight: "10vh",
+    minHeight: "15vh",
     display: "flex",
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    textShadow: "2px 2px 5px rgba(0, 0, 0, 0.3)",
   },
   nav: {
-    width: "50%",
+    width: "75%",
   },
   list: {
     width: "100%",
     display: "flex",
     justifyContent: "space-between",
     listStyle: "none",
-    fontSize: "1.2rem",
+    fontSize: "1.4rem",
   },
   home: {
     fontFamily: "Yellowtail, cursive",
     color: "#FFBD2D",
     fontWeight: "bold",
-    fontSize: "2.5rem",
+    fontSize: "3rem",
   },
   icon: {
-    fontSize: "2.5rem",
+    fontSize: "3rem",
   },
 }));
 
@@ -37,7 +36,7 @@ const Navbar = () => {
 
     return (
       <header className={classes.root}>
-        <nav style={{ width: "50%" }}>
+        <nav className={classes.nav}>
           <ul className={classes.list}>
             <li className={classes.home}>R</li>
             <li style={{ marginTop: "1rem" }}>Meny</li>
