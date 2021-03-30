@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "Yellowtail, cursive",
     color: "#fff",
     fontSize: "3rem",
-    fontWeight: 'normal',
+    fontWeight: "normal",
   },
   heroTitle: {
     fontSize: "4rem",
@@ -38,6 +38,9 @@ const useStyles = makeStyles((theme) => ({
     margin: "1rem",
     alignSelf: "center",
     fontWeight: "bold",
+    "&:hover": {
+      background: "#D0920A",
+    },
   },
 }));
 

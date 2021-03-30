@@ -1,6 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import React from 'react'
 import { Link } from 'react-router-dom';
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,14 +28,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "3rem",
   },
   icon: {
-    fontSize: "3rem",
-    cursor: 'pointer',
+    fontSize: "2.5rem",
+    cursor: "pointer",
   },
   link: {
-    textDecoration: 'none',
-    color: '#fff'
-
-  }
+    textDecoration: "none",
+    color: "#fff",
+  },
 }));
 
 const Navbar = () => {
@@ -57,12 +57,9 @@ const Navbar = () => {
             <Link to="/contact" className={classes.link}>
               <li style={{ marginTop: "1rem" }}>Kontakt</li>
             </Link>
-            <li className={classes.icon}>
-              <i className="fab fa-twitter"></i>
-            </li>
-            <li className={classes.icon}>
-              <i className="fab fa-instagram"></i>
-            </li>
+            <Link to="/cart" className={classes.link}>
+             <ShoppingCartIcon style={{marginTop: '.8rem'}} className={classes.icon}/>
+            </Link>
           </ul>
         </nav>
       </header>

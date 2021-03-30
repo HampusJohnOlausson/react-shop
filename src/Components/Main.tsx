@@ -1,5 +1,6 @@
 import React from 'react'
 import { Route, Switch } from 'react-router';
+import Cart from './Cart/Cart';
 import ContactPage from './Contact/ContactPage';
 import MenuPage from './Menu/MenuPage';
 import ReservationPage from './Reservation/ReservationPage';
@@ -21,6 +22,9 @@ const Main = () => {
           </Route>
           <Route path="/contact">
            <ContactPage/>
+          </Route>
+          <Route path="/cart">
+          <Cart/>
           </Route>
         </Switch>
       </div>
