@@ -1,26 +1,26 @@
 import React, { Component, createContext } from 'react'
-import { Product, products } from "../ProductData"
+import { Product, ProductData } from "../ProductData"
 
-export const ProductContext = createContext({
-
-    products: [],
-})
+export const ProductContext = createContext({})
 
 interface State {
-    products: Products[],
+    ProductData: Product[],
 }
 
 
 export class ProductProvider extends Component<{}, State> {
 
     state: State = {
-        products: products, 
+        ProductData: ProductData,
     }
+
     render() {
         return (
-            <ProductContext.Provider value={{products: this.state.products}}>
+            <ProductContext.Provider value={{ProductData: this.state.ProductData}}>
              {this.props.children}   
             </ProductContext.Provider>
         )
     }
 }
+
+export default ProductProvider;
