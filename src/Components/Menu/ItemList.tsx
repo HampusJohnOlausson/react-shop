@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ProductContext } from '../../Contexts/ProductContext'
 import { ProductData } from '../../ProductData'
 import Item from './Item'
 
 const ItemList = () => {
+
+    const productDataList = useContext(ProductContext)
     return (
         <div>
             { 
-              ProductData.map(item => 
-              <Item 
-              title={item.title} 
-              image={item.image}
-              description={item.description}
-              price={item.price}
-
-              />)
+              productDataList.ProductData.map((product: any ) => 
+                  <Item 
+                  key={product.title}
+                  product={product}
+                  />
+              )
             }
         </div>
     )
