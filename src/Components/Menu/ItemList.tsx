@@ -23,7 +23,6 @@ const ItemList = () => {
 
     const productDataList = useContext(ProductContext)
     return (
-  
         <div className={classes.list}>
           {productDataList.products.map((product: any) => (
             <Item key={product.id} product={product} />

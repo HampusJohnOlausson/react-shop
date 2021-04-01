@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "85vh",
     color: "#FFBD2D",
     display: "flex",
-    justifyContent: "flex-start",
+    justifyContent: "center",
     alignItems: "center",
   },
   heroContainer: {
@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     justifyContent: "center",
     textAlign: "center",
-    margin: "0rem 0rem 5rem 10rem",
+    marginBottom: '8rem',
   },
   icon: {
     fontSize: "3rem",

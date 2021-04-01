@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    margin: "2rem",
+    margin: "4rem",
     position: "relative",
     padding: "1rem",
   },

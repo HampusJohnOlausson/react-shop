@@ -1,8 +1,6 @@
 import React, { Component, createContext } from 'react'
 import { Product, ProductData } from "../ProductData";
 
-
-
 export const ProductContext = createContext<ProductValue>({
     products:[],
 });
