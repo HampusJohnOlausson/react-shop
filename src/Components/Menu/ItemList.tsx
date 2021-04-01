@@ -13,7 +13,8 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         alignItems: 'center',
         flexWrap: 'wrap'
-    }
+    },
+    
 }))
 
 const ItemList = () => {
@@ -22,17 +23,13 @@ const ItemList = () => {
 
     const productDataList = useContext(ProductContext)
     return (
+  
         <div className={classes.list}>
-            { 
-              productDataList.products.map((product: any ) => 
-                  <Item 
-                  key={product.id}
-                  product={product}
-                  />
-              )
-            }
+          {productDataList.products.map((product: any) => (
+            <Item key={product.id} product={product} />
+          ))}
         </div>
-    )
+    );
 }
 
 export default ItemList
