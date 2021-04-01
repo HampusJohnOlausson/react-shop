@@ -7,11 +7,12 @@ import Item from './Item';
 const useStyles = makeStyles((theme) => ({
 
     list: {
-        padding: '2rem',
+        padding: '4rem 2rem',
         display: 'flex',
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
+        flexWrap: 'wrap'
     }
 }))
 

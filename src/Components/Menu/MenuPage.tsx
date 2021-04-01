@@ -10,7 +10,8 @@ const useStyles = makeStyles((theme) => ({
     title: {
         textAlign: 'center',
         fontFamily: "Yellowtail, cursive",
-        color: "#FFBD2D"
+        color: "#FFBD2D",
+        fontSize: '2.6rem',
     }
 }))
 
