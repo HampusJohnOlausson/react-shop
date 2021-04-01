@@ -1,12 +1,27 @@
+import { makeStyles } from '@material-ui/core';
 import React, { useContext } from 'react'
 import { ProductContext } from '../../Contexts/ProductContext'
-import Item from './Item'
+import Item from './Item';
+
+
+const useStyles = makeStyles((theme) => ({
+
+    list: {
+        padding: '2rem',
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+    }
+}))
 
 const ItemList = () => {
 
+    const classes = useStyles();
+
     const productDataList = useContext(ProductContext)
     return (
-        <div>
+        <div className={classes.list}>
             { 
               productDataList.products.map((product: any ) => 
                   <Item 
