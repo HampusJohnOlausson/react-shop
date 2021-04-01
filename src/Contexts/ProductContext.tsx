@@ -1,10 +1,17 @@
 import React, { Component, createContext } from 'react'
-import { Product, ProductData } from "../ProductData"
+import { Product, ProductData } from "../ProductData";
 
-export const ProductContext = createContext({})
+
+
+export const ProductContext = createContext<ProductValue>({
+    products:[],
+});
 
 interface State {
-    products: Product[],
+  products: Product[];
+}
+interface ProductValue extends State {
+  
 }
 
 export class ProductProvider extends Component<{}, State> {
@@ -15,7 +22,7 @@ export class ProductProvider extends Component<{}, State> {
 
     render() {
         return (
-            <ProductContext.Provider value={{ProductData: this.state.products}}>
+            <ProductContext.Provider value={{products: this.state.products}}>
              {this.props.children}   
             </ProductContext.Provider>
         )

@@ -4,7 +4,6 @@ export interface Product {
   title: string;
   description: string;
   price: number;
-  quantity: number;
 }
 
 export const ProductData: Product[] = [
@@ -14,7 +13,5 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
-    quantity: 1,
   },
-
 ];

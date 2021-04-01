@@ -1,19 +1,16 @@
 import React from 'react'
+import { Product } from '../../ProductData'
 
 interface Props {
-//   id: number;
-  image: string;
-  title: string;
-  description: string;
-  price: number;
+  product: Product;
 }
 const Item = (props: Props) => {
     return (
         <div>
-            <img src={props.image} alt=""/>
-            <h4>{props.title}</h4>
-            <p>{props.description}</p>
-            <span>{props.price}</span>
+            <img src={props.product.image} alt="pizza"/>
+            <h4>{props.product.title}</h4>
+            <p>{props.product.description}</p>
+            <span>{props.product.price}</span>
         </div>
     )
 }

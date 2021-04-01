@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import { ProductContext } from '../../Contexts/ProductContext'
-import { ProductData } from '../../ProductData'
 import Item from './Item'
 
 const ItemList = () => {
@@ -9,9 +8,9 @@ const ItemList = () => {
     return (
         <div>
             { 
-              productDataList.ProductData.map((product: any ) => 
+              productDataList.products.map((product: any ) => 
                   <Item 
-                  key={product.title}
+                  key={product.id}
                   product={product}
                   />
               )
