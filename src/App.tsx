@@ -6,9 +6,11 @@ import ProductProvider from './Contexts/ProductContext';
 function App() {
   return (
     <ProductProvider>
-      <BrowserRouter>
-        <Layout />
-      </BrowserRouter>
+
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
+
     </ProductProvider>
   );
 }
