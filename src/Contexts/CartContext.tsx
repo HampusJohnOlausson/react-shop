@@ -7,34 +7,63 @@ interface State {
 }
 
 interface CartContextValue extends State{
-    cart: Product[];
+    
     addProductToCart: (product: Product) => void;
     removeProductFromCart: (product: Product) => void;
     emptyCart: () => void;
 }
 
-const CartContext = createContext<CartContextValue>({} as any);
+export const CartContext = createContext<CartContextValue>({
 
+    addProductToCart: () => { },
+    removeProductFromCart: () => { },
+    emptyCart: () => { },
+    cart: [],
+});
 
 class CartProvider extends Component<{}, State> {
 
     state: State = {
         cart: [],    
     }
+
     emptyCart = () => {
         this.setState({ 
             cart: [],
         })
     }
 
+    addProductToCart = (product: Product) => {
+        const updateCart = {...this.state.cart, product}
+        this.setState({ 
+            cart: updateCart 
+        })
+    }
+
+    removeProductFromCart = () => {
+        // const updateCart = {...this.state.cart}
+
+        // this.setState({
+        //     cart: 
+        // })
+    }
+
 
     render() {
+
+        console.log(this.state.cart);
         return (
-            <CartContext.Provider value={{ 
-                cart: this.state.cart }}>
-                {this.props.children}
-            </CartContext.Provider>
-        )
+          <CartContext.Provider
+            value={{
+              cart: this.state.cart,
+              emptyCart: this.emptyCart,
+              addProductToCart: this.addProductToCart,
+              removeProductFromCart: this.removeProductFromCart,
+            }}
+          >
+            {this.props.children}
+          </CartContext.Provider>
+        );
     }
 }
 
