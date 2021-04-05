@@ -24,6 +24,7 @@ class Item extends Component<Props>{
           size="small"
           variant="contained"
           className="button"
+          onClick={() => this.context.addProductToCart(this.props.product)}
         >
           {" "}
           <ShoppingCartIcon className="icon" />{" "}

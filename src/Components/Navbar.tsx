@@ -1,72 +1,58 @@
-import { makeStyles } from '@material-ui/core';
-import React from 'react'
+import { IconButton } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import Badge from "@material-ui/core/Badge";
+import { CartContext } from '../Contexts/CartContext';
+import '../Sass/Navbar.scss';
+import { Component, ContextType } from "react"
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: "15vh",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  nav: {
-    width: "75%",
-  },
-  list: {
-    width: "100%",
-    display: "flex",
-    justifyContent: "space-between",
-    listStyle: "none",
-    fontSize: "1.4rem",
-  },
-  home: {
-    fontFamily: "Yellowtail, cursive",
-    color: "#FFBD2D",
-    fontWeight: "bold",
-    fontSize: "3rem",
-  },
-  icon: {
-    fontSize: "2.5rem",
-    cursor: "pointer",
-  },
-  link: {
-    textDecoration: "none",
-    color: "#fff",
-    "&:hover": {
-      color: "#FFBD2D",
-    },
-  },
-}));
+interface State {
 
-const Navbar = () => {
+}
+class Navbar extends Component<{}, State> {
+    context!: ContextType<typeof CartContext>
+    static contextType = CartContext
 
-  const classes = useStyles();
+    state: State = {};
 
-    return (
-      <header className={classes.root}>
-        <nav className={classes.nav}>
-          <ul className={classes.list}>
-            <Link to="/" className={classes.link}>
-              <li className={classes.home}>R</li>
-            </Link>
-            <Link to="/menu" className={classes.link}>
-              <li style={{ marginTop: "1rem" }}>Meny</li>
-            </Link>
-            <Link to="/reservation" className={classes.link}>
-              <li style={{ marginTop: "1rem" }}>Boka Bord</li>
-            </Link>
-            <Link to="/contact" className={classes.link}>
-              <li style={{ marginTop: "1rem" }}>Kontakt</li>
-            </Link>
-            <Link to="/cart" className={classes.link}>
-             <ShoppingCartIcon style={{marginTop: '.8rem'}} className={classes.icon}/>
-            </Link>
-          </ul>
-        </nav>
-      </header>
-    );
+    render() {
+
+      console.log(this.context.cart.length);
+      return (
+        <header className="root">
+          <nav className="nav">
+            <ul className="list">
+              <Link to="/" className="link">
+                <li className="home">R</li>
+              </Link>
+              <Link to="/menu" className="link">
+                <li style={{ marginTop: "1rem" }}>Meny</li>
+              </Link>
+              <Link to="/reservation" className="link">
+                <li style={{ marginTop: "1rem" }}>Boka Bord</li>
+              </Link>
+              <Link to="/contact" className="link">
+                <li style={{ marginTop: "1rem" }}>Kontakt</li>
+              </Link>
+              <Link to="/cart" className="link">
+                <IconButton aria-label="cart">
+                  <Badge
+                    badgeContent={this.context.cart.length}
+                    showZero
+                    color="secondary"
+                  >
+                    <ShoppingCartIcon
+                      style={{ color: "#FFBD2D" }}
+                      className="icon"
+                    />
+                  </Badge>
+                </IconButton>
+              </Link>
+            </ul>
+          </nav>
+        </header>
+      );
+  }
 }
 
 export default Navbar
