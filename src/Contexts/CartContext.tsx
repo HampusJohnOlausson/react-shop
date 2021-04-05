@@ -11,6 +11,7 @@ interface CartContextValue extends State{
     addProductToCart: (product: Product) => void;
     removeProductFromCart: (product: Product) => void;
     emptyCart: () => void;
+    
 }
 
 export const CartContext = createContext<CartContextValue>({
@@ -54,7 +55,7 @@ class CartProvider extends Component<{}, State> {
         console.log(this.state.cart);
         return (
           <CartContext.Provider
-            value={{
+            value={{ 
               cart: this.state.cart,
               emptyCart: this.emptyCart,
               addProductToCart: this.addProductToCart,

@@ -11,13 +11,14 @@ interface State {
 }
 class Navbar extends Component<{}, State> {
     context!: ContextType<typeof CartContext>
-    static contextType = CartContext
+    static contextType = CartContext;
 
     state: State = {};
 
     render() {
 
       console.log(this.context.cart.length);
+      
       return (
         <header className="root">
           <nav className="nav">
