@@ -11,15 +11,16 @@ interface CartContextValue extends State{
     addProductToCart: (product: Product) => void;
     removeProductFromCart: (product: Product) => void;
     emptyCart: () => void;
+    getTotal: () => void;
     
 }
 
 export const CartContext = createContext<CartContextValue>({
-
-    addProductToCart: () => { },
-    removeProductFromCart: () => { },
-    emptyCart: () => { },
-    cart: [],
+  addProductToCart: () => {},
+  removeProductFromCart: () => {},
+  emptyCart: () => {},
+  getTotal: () => {},
+  cart: [],
 });
 
 class CartProvider extends Component<{}, State> {
@@ -35,18 +36,23 @@ class CartProvider extends Component<{}, State> {
     }
 
     addProductToCart = (product: Product) => {
-        const updateCart = {...this.state.cart, product}
+
+        const updateCart = [...this.state.cart, product];
         this.setState({ 
-            cart: updateCart 
+            cart: updateCart
         })
     }
 
     removeProductFromCart = () => {
-        // const updateCart = {...this.state.cart}
+        // const updateCart = [...this.state.cart];
 
         // this.setState({
         //     cart: 
         // })
+    }
+
+    getTotal = () => {
+
     }
 
 
@@ -55,11 +61,12 @@ class CartProvider extends Component<{}, State> {
         console.log(this.state.cart);
         return (
           <CartContext.Provider
-            value={{ 
+            value={{
               cart: this.state.cart,
               emptyCart: this.emptyCart,
               addProductToCart: this.addProductToCart,
               removeProductFromCart: this.removeProductFromCart,
+              getTotal: this.getTotal,
             }}
           >
             {this.props.children}

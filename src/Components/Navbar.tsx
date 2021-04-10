@@ -20,39 +20,39 @@ class Navbar extends Component<{}, State> {
       console.log(this.context.cart.length);
       
       return (
-        <header className="root">
-          <nav className="nav">
-            <ul className="list">
-              <Link to="/" className="link">
-                <li className="home">R</li>
-              </Link>
-              <Link to="/menu" className="link">
-                <li style={{ marginTop: "1rem" }}>Meny</li>
-              </Link>
-              <Link to="/reservation" className="link">
-                <li style={{ marginTop: "1rem" }}>Boka Bord</li>
-              </Link>
-              <Link to="/contact" className="link">
-                <li style={{ marginTop: "1rem" }}>Kontakt</li>
-              </Link>
-              <Link to="/cart" className="link">
-                <IconButton aria-label="cart">
-                  <Badge
-                    badgeContent={this.context.cart.length}
-                    showZero
-                    color="secondary"
-                  >
-                    <ShoppingCartIcon
-                      style={{ color: "#FFBD2D" }}
-                      className="icon"
-                    />
-                  </Badge>
-                </IconButton>
-              </Link>
-            </ul>
-          </nav>
-        </header>
-      );
+            <header className="root">
+              <nav className="nav">
+                <ul className="list">
+                  <Link to="/" className="link">
+                    <li className="home">R</li>
+                  </Link>
+                  <Link to="/menu" className="link">
+                    <li style={{ marginTop: "1rem" }}>Meny</li>
+                  </Link>
+                  <Link to="/reservation" className="link">
+                    <li style={{ marginTop: "1rem" }}>Boka Bord</li>
+                  </Link>
+                  <Link to="/contact" className="link">
+                    <li style={{ marginTop: "1rem" }}>Kontakt</li>
+                  </Link>
+                  <Link to="/cart" className="link">
+                    <IconButton aria-label="cart">
+                      <Badge
+                        badgeContent={this.context.cart.length}
+                        showZero
+                        color="secondary"
+                      >
+                        <ShoppingCartIcon
+                          style={{ color: "#FFBD2D" }}
+                          className="icon"
+                        />
+                      </Badge>
+                    </IconButton>
+                  </Link>
+                </ul>
+              </nav>
+            </header>
+      )
   }
 }
 
