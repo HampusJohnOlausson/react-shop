@@ -1,11 +1,26 @@
-import React from 'react'
+import { Component, ContextType } from "react";
+import { CartContext } from "../../Contexts/CartContext";
 
-const Cart = () => {
+interface Props {}
+
+class Cart extends Component<Props> {
+  context!: ContextType<typeof CartContext>;
+  static contextType = CartContext;
+
+  render() {
     return (
-        <div>
-            <h2>Cart</h2>
-        </div>
-    )
+      <div>
+        {this.context.cart.map((item, index) => (
+          <div key={index} className="product-Container">
+              <img src={item.image} alt="" className="cart-image"/>
+              <h4>{item.title}</h4>
+              <p>{item.price}</p>
+
+          </div>
+        ))}
+      </div>
+    );
+  }
 }
 
-export default Cart
+export default Cart;
