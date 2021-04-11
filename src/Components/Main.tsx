@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router';
 import Cart from './Cart/Cart';
 import ContactPage from './Contact/ContactPage';
 import MenuPage from './Menu/MenuPage';
+import ProductItem from './Menu/ProductItem';
 import ReservationPage from './Reservation/ReservationPage';
 import Start from './Start'
 
@@ -25,6 +26,9 @@ const Main = () => {
           </Route>
           <Route path="/cart">
           <Cart/>
+          </Route>
+          <Route path="/productItem">
+            <ProductItem/>
           </Route>
         </Switch>
       </div>
