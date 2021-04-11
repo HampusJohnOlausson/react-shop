@@ -29,7 +29,9 @@ const useStyles = makeStyles(() => ({
     fontSize: "2rem",
   },
   quantityConatainer: {},
-  empty: {},
+  empty: {
+    textAlign: 'center'
+  },
 }));
 
 const Cart = () => {
