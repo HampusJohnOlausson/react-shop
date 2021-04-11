@@ -48,7 +48,6 @@ const Navbar = () => {
 
     const cartContext = useContext(CartContext);
 
-      
       return (
         <header className={classes.root}>
           <nav className={classes.nav}>

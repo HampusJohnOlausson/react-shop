@@ -1,11 +1,11 @@
 import { Button } from '@material-ui/core'
 import { Product } from '../../ProductData'
 import { makeStyles } from '@material-ui/core'
-import { useContext } from 'react'
+import React, { useContext } from 'react'
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
     productContainer: {
       width: '20rem',
       height: '10rem',
@@ -65,7 +65,6 @@ const Item = (props: Props) =>{
 
     return (
       <div>
-        
           <div className={classes.productContainer}>
             <img
               src={props.product.image}
@@ -87,7 +86,7 @@ const Item = (props: Props) =>{
             </Button>
           </div>
       </div>
-    );
+    )
 }
 
 export default Item;

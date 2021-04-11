@@ -1,19 +1,28 @@
-import { Component, ContextType } from "react";
+import { useContext} from "react";
 import { CartContext } from "../../Contexts/CartContext";
+import { makeStyles } from "@material-ui/core";
 
-interface Props {}
+const useStyles = makeStyles(() => ({
 
-class Cart extends Component<Props> {
-  context!: ContextType<typeof CartContext>;
-  static contextType = CartContext;
+  root: {
 
-  render() {
+  },
+  empty: {
 
-    const { cart } = this.context;
+  },
 
-    if(cart.length === 0){
+
+}))
+
+const Cart = () => {
+
+  const classes = useStyles();
+  
+  const cartContext = useContext(CartContext);
+
+    if(cartContext.cart.length === 0){
         return (
-        <div className="empty-cart">
+        <div className={classes.empty}>
             <h2>Cart is empty</h2>
         </div>
         )
@@ -21,16 +30,15 @@ class Cart extends Component<Props> {
 
     return (
       <div>
-        {cart.map((item, index) => (
-          <div key={index} className="product-Container">
+        {cartContext.cart.map((item) => (
+          <div key={item.id} className="product-Container">
               <img src={item.image} alt="" className="cart-image"/>
               <h4>{item.title}</h4>
               <p>{item.price}</p>
           </div>
         ))}
       </div>
-    );
-  }
+    )
 }
 
 export default Cart;
