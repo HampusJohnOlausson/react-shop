@@ -64,7 +64,7 @@ const Navbar = () => {
               <Link to="/contact" className={classes.link}>
                 <li style={{ marginTop: "1rem" }}>Kontakt</li>
               </Link>
-              <Link to="/cart" className={classes.link}>
+              <Link to="/checkout" className={classes.link}>
                 <IconButton aria-label="cart">
                   <Badge
                     badgeContent={cartContext.cart.length}

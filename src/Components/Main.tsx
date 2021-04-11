@@ -1,6 +1,7 @@
 import React from 'react'
 import { Route, Switch } from 'react-router';
 import Cart from './Cart/Cart';
+import Checkout from './Cart/Checkout';
 import ContactPage from './Contact/ContactPage';
 import MenuPage from './Menu/MenuPage';
 import ProductItem from './Menu/ProductItem';
@@ -24,8 +25,8 @@ const Main = () => {
           <Route path="/contact">
            <ContactPage/>
           </Route>
-          <Route path="/cart">
-          <Cart/>
+          <Route path="/checkout">
+            <Checkout/>
           </Route>
           <Route path="/productItem">
             <ProductItem/>
