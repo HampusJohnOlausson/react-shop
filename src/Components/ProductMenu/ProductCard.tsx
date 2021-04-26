@@ -55,7 +55,7 @@ const useStyles = makeStyles((theme) => ({
 interface Props {
   product: Product;
 }
-const Item = (props: Props) =>{
+const ProductCard = (props: Props) =>{
 
     const classes = useStyles();
 
@@ -63,7 +63,7 @@ const Item = (props: Props) =>{
 
     return (
       <div>
-        <Link to="/productItem">
+        <Link to={"/productItem/:id"} key={props.product.id}>
           <div className={classes.productContainer}>
             <img src={props.product.image} alt="" className={classes.image} />
             <h4 className={classes.title}>{props.product.title}</h4>
@@ -85,4 +85,4 @@ const Item = (props: Props) =>{
     );
 }
 
-export default Item;
+export default ProductCard;

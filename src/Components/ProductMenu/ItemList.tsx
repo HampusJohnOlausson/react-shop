@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core';
 import { useContext } from 'react'
 import { ProductContext } from '../../Contexts/ProductContext'
-import Item from './ProductCard';
+import ProductCard from './ProductCard';
 
 const useStyles = makeStyles((theme) => ({
 
@@ -20,12 +20,12 @@ const ItemList = () => {
 
     const classes = useStyles();
 
-    const productDataList = useContext(ProductContext)
+    const productContext = useContext(ProductContext)
 
     return (
         <div className={classes.list}>
-          {productDataList.products.map((product: any) => (
-            <Item key={product.id} product={product} />
+          {productContext.products.map((product: any) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
     );

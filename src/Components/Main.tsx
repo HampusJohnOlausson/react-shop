@@ -8,7 +8,7 @@ import ReservationPage from './Reservation/ReservationPage';
 import Start from './Start'
 
 const Main = () => {
-  
+
     return (
       <div>
         <Switch>
@@ -16,19 +16,19 @@ const Main = () => {
             <Start />
           </Route>
           <Route path="/menu">
-            <MenuPage/>
+            <MenuPage />
           </Route>
           <Route path="/reservation">
-            <ReservationPage/>
+            <ReservationPage />
           </Route>
           <Route path="/contact">
-           <ContactPage/>
+            <ContactPage />
           </Route>
           <Route path="/checkout">
-            <Checkout/>
+            <Checkout />
           </Route>
-          <Route path="/productItem">
-            <ProductItem/>
+          <Route path={"/productItem/:id"}>
+              <ProductItem/>
           </Route>
         </Switch>
       </div>
