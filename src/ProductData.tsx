@@ -1,5 +1,5 @@
 export interface Product {
-  id: number,  
+  id: string,  
   image: string;
   title: string;
   description: string;
@@ -9,7 +9,7 @@ export interface Product {
 
 export const ProductData: Product[] = [
   {
-    id: 1,
+    id: '1',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -18,7 +18,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 2,
+    id: '2',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -27,7 +27,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 3,
+    id: '3',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -36,7 +36,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 4,
+    id: '4',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -45,7 +45,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 5,
+    id:'5',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -54,7 +54,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 6,
+    id: '6',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -63,7 +63,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 7,
+    id:' 7',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -72,7 +72,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 8,
+    id: '8',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -81,7 +81,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 9,
+    id: '9',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -90,7 +90,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 10,
+    id: '10',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -99,7 +99,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 11,
+    id: '11',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",
@@ -108,7 +108,7 @@ export const ProductData: Product[] = [
     size: 0,
   },
   {
-    id: 12,
+    id: '12',
     image:
       "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80",
     title: "Pizza Margarita",

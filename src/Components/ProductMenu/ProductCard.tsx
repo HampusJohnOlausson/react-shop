@@ -63,7 +63,7 @@ const ProductCard = (props: Props) =>{
 
     return (
       <div>
-        <Link to={"/productItem/:id"} key={props.product.id}>
+        <Link to={`/productItem/${props.product.id}`} key={props.product.id}>
           <div className={classes.productContainer}>
             <img src={props.product.image} alt="" className={classes.image} />
             <h4 className={classes.title}>{props.product.title}</h4>

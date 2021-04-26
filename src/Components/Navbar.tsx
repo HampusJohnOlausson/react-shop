@@ -58,9 +58,6 @@ const Navbar = () => {
               <Link to="/menu" className={classes.link}>
                 <li style={{ marginTop: "1rem" }}>Meny</li>
               </Link>
-              <Link to="/reservation" className={classes.link}>
-                <li style={{ marginTop: "1rem" }}>Boka Bord</li>
-              </Link>
               <Link to="/contact" className={classes.link}>
                 <li style={{ marginTop: "1rem" }}>Kontakt</li>
               </Link>

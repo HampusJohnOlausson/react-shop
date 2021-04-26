@@ -6,37 +6,38 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "85vh",
     color: "#FFBD2D",
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
   },
   heroContainer: {
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
-    textAlign: "center",
-    marginBottom: '8rem',
-  },
-  icon: {
-    fontSize: "3rem",
+    margin: "0rem 0rem 10rem 10rem",
   },
   welcomeText: {
     fontFamily: "Yellowtail, cursive",
     color: "#fff",
-    fontSize: "3rem",
+    fontSize: "3.5rem",
     fontWeight: "normal",
+    marginBottom: "-1rem",
   },
   heroTitle: {
-    fontSize: "4rem",
+    fontSize: "4.5rem",
   },
   underText: {
+    fontSize: "1.6rem",
     fontWeight: "normal",
     color: "#fff",
   },
   button: {
     background: "#FFBD2D",
     color: "black",
-    margin: "1rem",
-    alignSelf: "center",
+    width: "15rem",
+    margin: "1rem 0rem",
+    borderRadius: '.5rem',
+    padding: "1rem 2rem",
+    fontSize: "1.4rem",
     fontWeight: "bold",
     "&:hover": {
       background: "#D0920A",
@@ -51,9 +52,6 @@ const Start = () => {
     return (
       <main className={classes.root}>
         <div className={classes.heroContainer}>
-          <h3 className={classes.icon}>
-            <i className="fas fa-utensils"></i>
-          </h3>
           <h3 className={classes.welcomeText}>Välkommen till</h3>
           <h1 className={classes.heroTitle}>Cucina De Romina</h1>
           <h4 className={classes.underText}>
