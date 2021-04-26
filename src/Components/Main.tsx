@@ -1,10 +1,9 @@
 import React from 'react'
 import { Route, Switch } from 'react-router';
-import Cart from './Cart/Cart';
 import Checkout from './Cart/Checkout';
 import ContactPage from './Contact/ContactPage';
-import MenuPage from './Menu/MenuPage';
-import ProductItem from './Menu/ProductItem';
+import MenuPage from './ProductMenu/MenuPage';
+import ProductItem from './ProductMenu/ProductItem';
 import ReservationPage from './Reservation/ReservationPage';
 import Start from './Start'
 

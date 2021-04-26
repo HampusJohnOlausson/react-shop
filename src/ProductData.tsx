@@ -4,6 +4,7 @@ export interface Product {
   title: string;
   description: string;
   price: number;
+  size: number;
 }
 
 export const ProductData: Product[] = [
@@ -14,6 +15,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "Tomatsås, mozzarella och basilika",
+    size: 0,
   },
   {
     id: 2,
@@ -22,6 +24,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 4,
@@ -38,6 +42,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 5,
@@ -46,6 +51,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "Tomatsås, mozzarella och basilika",
+    size: 0,
   },
   {
     id: 6,
@@ -54,6 +60,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 7,
@@ -62,6 +69,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 8,
@@ -70,6 +78,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 9,
@@ -78,6 +87,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "Tomatsås, mozzarella och basilika",
+    size: 0,
   },
   {
     id: 10,
@@ -86,6 +96,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 11,
@@ -94,6 +105,7 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
   {
     id: 12,
@@ -102,5 +114,6 @@ export const ProductData: Product[] = [
     title: "Pizza Margarita",
     price: 139,
     description: "gjord på bla bla",
+    size: 0,
   },
 ];

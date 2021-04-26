@@ -1,0 +1,50 @@
+.root {
+  min-height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.nav {
+  width: 75%;
+}
+
+.list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  list-style: none;
+  font-size: 1.4rem;
+}
+
+.home {
+  font-family: Yellowtail, cursive;
+  color: #FFBD2D;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.icon {
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: #fff;
+}
+/*# sourceMappingURL=Navbar.css.map */
