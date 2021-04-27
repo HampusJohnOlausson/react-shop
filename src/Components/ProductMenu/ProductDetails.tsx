@@ -26,7 +26,7 @@ const ProductDetails = (props: Props) => {
   if(!specificProduct){
 
     return <div>
-      <h1>Sorry, the item was not available!</h1>
+      <h1>Sorry, the product was not available!</h1>
     </div>
   }
     return (
