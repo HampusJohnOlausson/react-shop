@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core'
 import React from 'react'
-import ItemList from './ItemList'
+import ProductList from './ProductList';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -15,16 +15,16 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const MenuPage = () => {
+const ProductPage = () => {
 
     const classes = useStyles();
 
     return (
         <div className={classes.root}>
-            <h2 className={classes.title}>Menu</h2>
-            <ItemList/>
+            <h2 className={classes.title}>Products</h2>
+            <ProductList/>
         </div>
     )
 }
 
-export default MenuPage
+export default ProductPage;

@@ -8,39 +8,39 @@ import { makeStyles } from "@material-ui/core";
 import { useContext} from "react"
 
 const useStyles = makeStyles(() => ({
-    root: {
-      minHeight: '15vh',
-      display: 'flex',
-      flexDirection: 'row',
-      justifyContent: 'center',
-      alignItems: 'center',
-    },
-nav: {
-    width: '75%',
-},
-list: {
-    width: '100%;',
-    display: 'flex',
-    justifyContent: 'space-between',
-    listStyle: 'none',
-    fontSize: '1.4rem',
-},
-home: {
-    fontFamily: 'Yellowtail, cursive',
-    color: '#FFBD2D',
-    fontWeight: 'bold',
-    fontSize: '3rem',
-},
-icon: {
-    fontSize: '2.5rem',
-    cursor: 'pointer',
-},
-link: {
-    textDecoration: 'none',
-    color: '#fff',
-},
+  root: {
+    minHeight: "15vh",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
   
-}))
+  },
+  nav: {
+    width: "75%",
+  },
+  list: {
+    width: "100%;",
+    display: "flex",
+    justifyContent: "space-between",
+    listStyle: "none",
+    fontSize: "1.4rem",
+  },
+  home: {
+    fontFamily: 'Mr Dafoe, cursive',
+    color: "#28c7fa",
+    fontWeight: "normal",
+    fontSize: "3rem",
+  },
+  icon: {
+    fontSize: "2.5rem",
+    cursor: "pointer",
+  },
+  link: {
+    textDecoration: "none",
+    color: "#fff",
+  },
+}));
 
 const Navbar = () => {
   
@@ -53,13 +53,13 @@ const Navbar = () => {
           <nav className={classes.nav}>
             <ul className={classes.list}>
               <Link to="/" className={classes.link}>
-                <li className={classes.home}>R</li>
+                <li className={classes.home}>F</li>
               </Link>
-              <Link to="/menu" className={classes.link}>
-                <li style={{ marginTop: "1rem" }}>Meny</li>
+              <Link to="/products" className={classes.link}>
+                <li style={{ marginTop: "1rem" }}>Products</li>
               </Link>
               <Link to="/contact" className={classes.link}>
-                <li style={{ marginTop: "1rem" }}>Kontakt</li>
+                <li style={{ marginTop: "1rem" }}>Contakt</li>
               </Link>
               <Link to="/checkout" className={classes.link}>
                 <IconButton aria-label="cart">
@@ -69,7 +69,7 @@ const Navbar = () => {
                     color="secondary"
                   >
                     <ShoppingCartIcon
-                      style={{ color: "#FFBD2D" }}
+                      style={{ color: "#28c7fa" }}
                       className="icon"
                     />
                   </Badge>

@@ -5,7 +5,7 @@ import { ProductContext } from '../../Contexts/ProductContext';
 interface Props {
   id: string
 }
-const SpecificProduct = (props: Props) => {
+const ProductDetails = (props: Props) => {
 
   const productContext = useContext(ProductContext);
   const match = useRouteMatch<Props>();
@@ -35,4 +35,4 @@ const SpecificProduct = (props: Props) => {
     );
 }
 
-export default SpecificProduct
+export default ProductDetails;
