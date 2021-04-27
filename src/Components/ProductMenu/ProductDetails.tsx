@@ -5,13 +5,41 @@ import { Button } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
 import { Product } from "../../ProductData";
+import { makeStyles } from '@material-ui/core'
+import { Height } from '@material-ui/icons';
 
+
+const useStyles = makeStyles((theme) => ({
+  wrapper: {
+    minHeight: '85vh',
+  },
+  specificProductContainer: {
+    height: "45rem",
+    width: "80%",
+    display: "flex",
+    flexDirection: "row",
+    margin: "auto",
+  },
+  image: {
+    width: '50%'
+  },
+  infoContainer: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "column",
+    alignItems: "center",
+    justifyContent: "center",
+  },
+}));
 
 interface Props {
   id: string,
   product: Product;
 }
 const ProductDetails = (props: Props) => {
+
+  const classes = useStyles();
+  
 
   const cartContext = useContext(CartContext);
   const productContext = useContext(ProductContext);
@@ -30,24 +58,26 @@ const ProductDetails = (props: Props) => {
     </div>
   }
     return (
-      <div>
-        <div className="specificProductContainer">
-          <img src={specificProduct.image} alt="" />
-          <h4 style={{ color: "white" }}>{specificProduct.title}</h4>
-          <span>{`${specificProduct.price} $`}</span>
-          <p>{specificProduct.description}</p>
-          <div className="sizeContainer">
-            <h5>Size:</h5>
-            <span>{specificProduct.size}</span>
+      <div className={classes.wrapper}>
+        <div className={classes.specificProductContainer}>
+          <img src={specificProduct.image} alt="" className={classes.image} />
+          <div className={classes.infoContainer}>
+            <h4 style={{ color: "white" }}>{specificProduct.title}</h4>
+            <span>{`${specificProduct.price} $`}</span>
+            <p>{specificProduct.description}</p>
+            <div className="sizeContainer">
+              <h5>Size:</h5>
+              <span>{specificProduct.size}</span>
+            </div>
+            <Button
+              size="small"
+              variant="contained"
+              onClick={() => cartContext.addProductToCart(props.product)}
+            >
+              {" "}
+              <ShoppingCartIcon />{" "}
+            </Button>
           </div>
-          <Button
-            size="small"
-            variant="contained"
-            onClick={() => cartContext.addProductToCart(props.product)}
-          >
-            {" "}
-            <ShoppingCartIcon />{" "}
-          </Button>
         </div>
       </div>
     );
