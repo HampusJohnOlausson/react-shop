@@ -24,9 +24,7 @@ const Main = () => {
           <Route path="/checkout">
             <Checkout />
           </Route>
-          <Route path={"/productItem/:id"}>
-            <SpecificProduct/>
-          </Route>
+          <Route path={'/productItem/:id'} component={SpecificProduct}/>
         </Switch>
       </div>
     );
