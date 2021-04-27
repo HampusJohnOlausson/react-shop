@@ -2,7 +2,6 @@ import React from 'react'
 import { Route, Switch } from 'react-router';
 import Checkout from './Cart/Checkout';
 import ContactPage from './Contact/ContactPage';
-import MenuPage from './ProductMenu/ProductPage';
 import SpecificProduct from './ProductMenu/ProductDetails';
 import Start from './Start'
 import ProductPage from './ProductMenu/ProductPage';
