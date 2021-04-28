@@ -6,7 +6,6 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
 import { Product } from "../../ProductData";
 import { makeStyles } from '@material-ui/core'
-import { Height } from '@material-ui/icons';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -72,7 +71,7 @@ const ProductDetails = (props: Props) => {
             <Button
               size="small"
               variant="contained"
-              onClick={() => cartContext.addProductToCart(props.product)}
+              onClick={() => cartContext.addProductToCart(specificProduct!)}
             >
               {" "}
               <ShoppingCartIcon />{" "}
