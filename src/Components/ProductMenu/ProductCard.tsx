@@ -2,9 +2,8 @@ import { Button } from '@material-ui/core'
 import { Product } from '../../ProductData'
 import { makeStyles } from '@material-ui/core'
 import { Link } from "react-router-dom";
-import React, { useContext } from 'react'
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import { CartContext } from '../../Contexts/CartContext';
+import React from 'react'
+
 
 const useStyles = makeStyles((theme) => ({
   productContainer: {
@@ -67,8 +66,6 @@ const ProductCard = (props: Props) =>{
 
     const classes = useStyles();
 
-    const cartContext = useContext(CartContext);
-
     return (
       <div>
         <Link
@@ -91,15 +88,6 @@ const ProductCard = (props: Props) =>{
                 More info
               </Button>
             </div>
-            {/* <Button
-              size="small"
-              variant="contained"
-              className={classes.button}
-              onClick={() => cartContext.addProductToCart(props.product)}
-            >
-              {" "}
-              <ShoppingCartIcon className={classes.icon} />{" "}
-            </Button> */}
           </div>
         </Link>
       </div>

@@ -53,6 +53,7 @@ const Cart = () => {
         {cartContext.cart.map((item) => (
           <div key={item.id} className={classes.productContainer}>
               <img src={item.image} alt="" className={classes.image}/>
+              <span>{item.size}</span>
               <h4 className={classes.title}>{item.title}</h4>
               <p className={classes.price}>{`${item.price} sek`}</p>
               <div className={classes.quantityConatainer}>

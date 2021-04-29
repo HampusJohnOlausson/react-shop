@@ -1,15 +1,17 @@
 import { createContext } from "react";
 import { Product } from "../ProductData";
 import React, { Component } from "react";
+import Cart from "../Components/Cart/Cart";
 
 interface State {
-    cart: Product[];
+    cart: Product[],
 }
 
 interface CartContextValue extends State{
     
     addProductToCart: (product: Product) => void;
     removeProductFromCart: (product: Product) => void;
+    chooseSize: (product: any) => void;
     emptyCart: () => void;
     getTotal: () => void;
     
@@ -17,6 +19,7 @@ interface CartContextValue extends State{
 
 export const CartContext = createContext<CartContextValue>({
   addProductToCart: () => {},
+  chooseSize: () => {},
   removeProductFromCart: () => {},
   emptyCart: () => {},
   getTotal: () => {},
@@ -24,55 +27,56 @@ export const CartContext = createContext<CartContextValue>({
 });
 
 class CartProvider extends Component<{}, State> {
+  state: State = {
+    cart: [],
+  };
 
-    state: State = {
-        cart: [],    
+  emptyCart = () => {
+    this.setState({
+      cart: [],
+    });
+  };
+
+  addProductToCart = (product: Product) => {
+    const updateCart = [...this.state.cart, product];
+    this.setState({
+      cart: updateCart,
+    });
+  };
+
+  chooseSize = (product: Product) => {
+    for (let i = 0; i < product.size.length; i++) {
+      const chosenSize = product.size[i];
+      console.log(chosenSize);
     }
+  };
 
-    emptyCart = () => {
-        this.setState({ 
-            cart: [],
-        })
-    }
+  removeProductFromCart = () => {
+    // const updateCart = [...this.state.cart];
+    // this.setState({
+    //     cart:
+    // })
+  };
 
-    addProductToCart = (product: Product) => {
+  getTotal = () => {};
 
-        const updateCart = [...this.state.cart, product];
-        this.setState({ 
-            cart: updateCart
-        })
-    }
-
-    removeProductFromCart = () => {
-        // const updateCart = [...this.state.cart];
-
-        // this.setState({
-        //     cart: 
-        // })
-    }
-
-    getTotal = () => {
-
-    }
-
-
-    render() {
-
-        console.log(this.state.cart);
-        return (
-          <CartContext.Provider
-            value={{
-              cart: this.state.cart,
-              emptyCart: this.emptyCart,
-              addProductToCart: this.addProductToCart,
-              removeProductFromCart: this.removeProductFromCart,
-              getTotal: this.getTotal,
-            }}
-          >
-            {this.props.children}
-          </CartContext.Provider>
-        );
-    }
+  render() {
+    console.log(this.state.cart);
+    return (
+      <CartContext.Provider
+        value={{
+          cart: this.state.cart,
+          emptyCart: this.emptyCart,
+          addProductToCart: this.addProductToCart,
+          chooseSize: this.chooseSize,
+          removeProductFromCart: this.removeProductFromCart,
+          getTotal: this.getTotal,
+        }}
+      >
+        {this.props.children}
+      </CartContext.Provider>
+    );
+  }
 }
 
 export default CartProvider;

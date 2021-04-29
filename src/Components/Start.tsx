@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
     padding: ".5rem 2rem",
     fontSize: "1.2rem",
     fontWeight: "bold",
+    transitionDuration: '0.4s',
     "&:hover": {
       background: "#20A5CF",
     },

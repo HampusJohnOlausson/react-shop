@@ -6,11 +6,12 @@ import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
 import { Product } from "../../ProductData";
 import { makeStyles } from '@material-ui/core'
+import ProductList from './ProductList';
 
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
-    minHeight: '85vh',
+    minHeight: "85vh",
   },
   specificProductContainer: {
     height: "45rem",
@@ -20,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     margin: "auto",
   },
   image: {
-    width: '50%'
+    width: "50%",
   },
   infoContainer: {
     width: "100%",
@@ -28,6 +29,18 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
+  },
+  sizeBtn: {
+    margin: ".5rem",
+    padding: "1rem",
+    borderRadius: ".4rem",
+    background: "#28c7fa",
+    boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
+    color: "white",
+    fontWeight: "bold",
+    "&:hover": {
+      background: "#20A5CF",
+    },
   },
 }));
 
@@ -50,6 +63,7 @@ const ProductDetails = (props: Props) => {
   let specificProduct = productContext.products.find((p) => p.id === match.params.id);
   console.log(specificProduct);
 
+  
   if(!specificProduct){
 
     return <div>
@@ -66,7 +80,18 @@ const ProductDetails = (props: Props) => {
             <p>{specificProduct.description}</p>
             <div className="sizeContainer">
               <h5>Size:</h5>
-              <span>{specificProduct.size}</span>
+              <div>
+                {specificProduct.size.map((s) => (
+                  <Button
+                    size="small"
+                    variant="contained"
+                    onClick={() => cartContext.chooseSize(specificProduct!)}
+                    className={classes.sizeBtn}
+                  >
+                    {s}
+                  </Button>
+                ))}
+              </div>
             </div>
             <Button
               size="small"
