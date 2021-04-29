@@ -1,6 +1,9 @@
 import { useContext} from "react";
 import { CartContext } from "../../Contexts/CartContext";
-import { makeStyles } from "@material-ui/core";
+import { Button, makeStyles } from "@material-ui/core";
+import DeleteIcon from "@material-ui/icons/Delete";
+import { ProductContext } from "../../Contexts/ProductContext";
+import { Product } from "../../ProductData";
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -37,7 +40,6 @@ const useStyles = makeStyles(() => ({
 const Cart = () => {
 
   const classes = useStyles();
-  
   const cartContext = useContext(CartContext);
 
     if(cartContext.cart.length === 0){
@@ -52,17 +54,23 @@ const Cart = () => {
       <div className={classes.root}>
         {cartContext.cart.map((item) => (
           <div key={item.id} className={classes.productContainer}>
-              <img src={item.image} alt="" className={classes.image}/>
-              <span>{item.size}</span>
-              <h4 className={classes.title}>{item.title}</h4>
-              <p className={classes.price}>{`${item.price} sek`}</p>
-              <div className={classes.quantityConatainer}>
-
-              </div>
+            <img src={item.image} alt="" className={classes.image} />
+            <span>{item.size}</span>
+            <h4 className={classes.title}>{item.title}</h4>
+            <p className={classes.price}>{`${item.price} sek`}</p>
+            <div className={classes.quantityConatainer}></div>
+            <Button
+              color="secondary"
+              size="small"
+              variant="contained"
+              onClick={() => cartContext.removeProductFromCart(item)}
+            >
+              <DeleteIcon />
+            </Button>
           </div>
         ))}
       </div>
-    )
+    );
 }
 
 export default Cart;

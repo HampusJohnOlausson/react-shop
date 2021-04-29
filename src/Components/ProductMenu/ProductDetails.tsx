@@ -81,14 +81,15 @@ const ProductDetails = (props: Props) => {
             <div className="sizeContainer">
               <h5>Size:</h5>
               <div>
-                {specificProduct.size.map((s) => (
+                {specificProduct.size.map((specificSize, index) => (
                   <Button
+                    key={index}
                     size="small"
                     variant="contained"
-                    onClick={() => cartContext.chooseSize(specificProduct!)}
+                    onClick={() => cartContext.chooseSize(specificSize)}
                     className={classes.sizeBtn}
                   >
-                    {s}
+                    {specificSize}
                   </Button>
                 ))}
               </div>

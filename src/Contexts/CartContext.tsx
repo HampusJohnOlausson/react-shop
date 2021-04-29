@@ -1,16 +1,26 @@
 import { createContext } from "react";
 import { Product } from "../ProductData";
 import React, { Component } from "react";
-import Cart from "../Components/Cart/Cart";
+
+interface CartItem {
+  id: string;
+  image: string;
+  title: string;
+  description: string;
+  price: number;
+  size: Array<{}>;
+  category: string;
+  gender: string;
+}
 
 interface State {
-    cart: Product[],
+    cart: CartItem[],
 }
 
 interface CartContextValue extends State{
     
     addProductToCart: (product: Product) => void;
-    removeProductFromCart: (product: Product) => void;
+    removeProductFromCart: (product: CartItem) => void;
     chooseSize: (product: any) => void;
     emptyCart: () => void;
     getTotal: () => void;
@@ -38,24 +48,24 @@ class CartProvider extends Component<{}, State> {
   };
 
   addProductToCart = (product: Product) => {
+
     const updateCart = [...this.state.cart, product];
     this.setState({
       cart: updateCart,
     });
   };
 
-  chooseSize = (product: Product) => {
-    for (let i = 0; i < product.size.length; i++) {
-      const chosenSize = product.size[i];
-      console.log(chosenSize);
-    }
+  chooseSize = (product: CartItem) => {
+    console.log(product);
   };
 
-  removeProductFromCart = () => {
-    // const updateCart = [...this.state.cart];
-    // this.setState({
-    //     cart:
-    // })
+  removeProductFromCart = (product: Product) => {
+    const currentCart = [...this.state.cart];
+    let cartIndex = currentCart.indexOf(product);
+    currentCart.splice(cartIndex, 1);
+    this.setState({
+        cart: currentCart
+    })
   };
 
   getTotal = () => {};
