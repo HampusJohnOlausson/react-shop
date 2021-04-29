@@ -1,6 +1,6 @@
 import { useContext} from "react";
 import { CartContext } from "../../Contexts/CartContext";
-import { Button, makeStyles } from "@material-ui/core";
+import { Button, ButtonGroup, makeStyles } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { ProductContext } from "../../Contexts/ProductContext";
 import { Product } from "../../ProductData";
@@ -59,6 +59,11 @@ const Cart = () => {
             <h4 className={classes.title}>{item.title}</h4>
             <p className={classes.price}>{`${item.price} sek`}</p>
             <div className={classes.quantityConatainer}></div>
+            <ButtonGroup color="primary">
+              <Button color="primary">+</Button>
+              <Button></Button>
+              <Button>-</Button>
+            </ButtonGroup>
             <Button
               color="secondary"
               size="small"
