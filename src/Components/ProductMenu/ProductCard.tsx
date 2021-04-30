@@ -1,5 +1,5 @@
 import { Button } from '@material-ui/core'
-import { Product } from '../../ProductData'
+import { Product } from '../../Data/ProductData'
 import { makeStyles } from '@material-ui/core'
 import { Link } from "react-router-dom";
 import React from 'react'

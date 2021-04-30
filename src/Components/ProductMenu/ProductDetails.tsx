@@ -4,7 +4,7 @@ import { ProductContext } from '../../Contexts/ProductContext';
 import { Button } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
-import { Product } from "../../ProductData";
+import { Product } from "../../Data/ProductData";
 import { makeStyles } from '@material-ui/core'
 import ProductList from './ProductList';
 import { classicNameResolver } from 'typescript';
@@ -46,8 +46,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 interface Props {
-  id: string,
+  id: string;
   product: Product;
+  size: Array<{}>;
 }
 const ProductDetails = (props: Props) => {
 
@@ -65,15 +66,12 @@ const ProductDetails = (props: Props) => {
       (p) => p.id === match.params.id
     );
 
-  const chooseSize = (sizes: Object) => {
-    let specificProduct = productContext.products.find((p) => p.id === match.params.id);
-      specificProduct?.size.filter((sizes) => {
-        console.log(sizes);
-        //  return specificProduct?.size;
-      });
-      // console.log(specificProduct?.size);
-      // sizes = specificProduct?.size;
-      // console.log(sizes);
+  const chooseSize = (sizes: object | undefined) => {
+    // let specificProductSize = productContext.products.find((pt) => pt.size === match.params.size);
+    // console.log(specificProductSize)
+
+    // const specificProduct?.size = sizes;
+    console.log(sizes)
   }
 
   if(!specificProduct){

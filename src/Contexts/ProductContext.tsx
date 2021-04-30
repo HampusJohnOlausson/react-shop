@@ -1,5 +1,5 @@
 import React, { Component, createContext } from 'react'
-import { Product, ProductData } from "../ProductData";
+import { Product, ProductData } from "../Data/ProductData";
 
 
 interface State {

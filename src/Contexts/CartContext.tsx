@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { Product } from "../ProductData";
+import { Product } from "../Data/ProductData";
 import React, { Component } from "react";
 
 interface CartItem {

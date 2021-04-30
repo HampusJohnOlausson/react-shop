@@ -3,7 +3,7 @@ import { CartContext } from "../../Contexts/CartContext";
 import { Button, ButtonGroup, makeStyles } from "@material-ui/core";
 import DeleteIcon from "@material-ui/icons/Delete";
 import { ProductContext } from "../../Contexts/ProductContext";
-import { Product } from "../../ProductData";
+import { Product } from "../../Data/ProductData";
 
 const useStyles = makeStyles(() => ({
   root: {
