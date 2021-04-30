@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useRouteMatch } from 'react-router';
 import { ProductContext } from '../../Contexts/ProductContext';
 import { Button } from "@material-ui/core";
@@ -7,6 +7,7 @@ import { CartContext } from '../../Contexts/CartContext';
 import { Product } from "../../ProductData";
 import { makeStyles } from '@material-ui/core'
 import ProductList from './ProductList';
+import { classicNameResolver } from 'typescript';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -52,18 +53,29 @@ const ProductDetails = (props: Props) => {
 
   const classes = useStyles();
   
-
   const cartContext = useContext(CartContext);
   const productContext = useContext(ProductContext);
   const match = useRouteMatch<{
     id?: string | undefined;
     product?: string | undefined;
+    size?: string| undefined;
   }>();
 
-  let specificProduct = productContext.products.find((p) => p.id === match.params.id);
-  console.log(specificProduct);
+    let specificProduct = productContext.products.find(
+      (p) => p.id === match.params.id
+    );
 
-  
+  const chooseSize = (sizes: Object) => {
+    let specificProduct = productContext.products.find((p) => p.id === match.params.id);
+      specificProduct?.size.filter((sizes) => {
+        console.log(sizes);
+        //  return specificProduct?.size;
+      });
+      // console.log(specificProduct?.size);
+      // sizes = specificProduct?.size;
+      // console.log(sizes);
+  }
+
   if(!specificProduct){
 
     return <div>
@@ -86,7 +98,7 @@ const ProductDetails = (props: Props) => {
                     key={index}
                     size="small"
                     variant="contained"
-                    onClick={() => cartContext.chooseSize(specificSize)}
+                    onClick={() => chooseSize(specificSize)}
                     className={classes.sizeBtn}
                   >
                     {specificSize}
