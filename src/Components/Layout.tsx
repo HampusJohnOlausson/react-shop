@@ -7,7 +7,6 @@ const useStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     backgroundColor: "#1D1C1C",
-    width: "100%",
     color: "#fff",
   },
 }));

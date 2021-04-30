@@ -1,6 +1,7 @@
 import { Button, makeStyles } from '@material-ui/core';
 import React from 'react'
 import { Link } from "react-router-dom";
+import { NewArrivals } from '../Data/NewArrivals';
 import Background from "../Images/Background.jpg";
 import Carousel from './Carousel';
 
@@ -59,8 +60,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   newArrivalsContainer: {
-    width: "80%",
-    margin: "0rem, auto",
+
   },
   newArrivalsTitle: {
     color: "#fff",
@@ -102,7 +102,7 @@ const Start = () => {
         <div className={classes.newArrivalsContainer}>
           <h3 className={classes.newArrivalsTitle}>New Arrivals</h3>
           <div className={classes.newProductsContainer}></div>
-            <Carousel/>
+            <Carousel NewArrivals={NewArrivals}/>
         </div>
         <footer className={classes.footer}></footer>
       </main>
