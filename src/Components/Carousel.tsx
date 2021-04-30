@@ -2,6 +2,8 @@ import { NewArrivals } from '../Data/NewArrivals'
 import React, { useState } from "react";
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
 import { makeStyles } from "@material-ui/core";
+import '../Style/Carousel.css';
+
 
 const useStyles = makeStyles((theme) => ({
   slider: {
@@ -10,32 +12,31 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
     position: "relative",
     alignItems: "center",
-    margin: "1rem 0rem",
   },
-  slide: {},
   image: {
-    borderRadius: ".4rem",
-    height: "25rem",
-    margin: "2rem",
+    borderRadius: ".5rem",
+    height: "45rem",
+    margin: "3rem 2rem 10rem",
+    boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
   },
   arrowRight: {
-    fontSize: "4rem",
+    fontSize: "5rem",
     cursor: "pointer",
     position: "absolute",
     top: "50%",
-    right: "3rem",
+    right: "-5rem",
     zIndex: 10,
     userSelect: "none",
   },
   arrowLeft: {
-    fontSize: "4rem",
+    fontSize: "5rem",
     cursor: "pointer",
     position: "absolute",
-    left: "3rem",
+    left: "-5rem",
     top: "50%",
     zIndex: 10,
     userSelect: "none",
-  }
+  },
 }));
 
 interface Props {
@@ -45,7 +46,7 @@ const Carousel = (props: Props) => {
 
     const classes = useStyles();
 
-    const [current, setCurrent] = useState(0);
+    const [current, setCurrent] = useState(1);
     const length = NewArrivals.length;
 
     const nextSlide = () => {
@@ -67,11 +68,11 @@ const Carousel = (props: Props) => {
   return (
     <div className={classes.slider}>
       <ArrowLeft onClick={prevSlide} className={classes.arrowLeft}/>
-      <div className={classes.slide}>
+      <div>
         {NewArrivals.map((slide, index) => {
           return (
             <div
-              className={index === current ? 'slider active' : 'slide'}
+              className={index === current ? 'slide active' : 'slide'}
               key={index}
             >
               {index === current && (

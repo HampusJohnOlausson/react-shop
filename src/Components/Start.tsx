@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     padding: " 4rem 8rem",
     flexDirection: "column",
     justifyContent: "center",
-    margin: "0rem auto 6rem",
+    margin: "0rem auto 4rem",
   },
   welcomeText: {
     color: "#fff",
