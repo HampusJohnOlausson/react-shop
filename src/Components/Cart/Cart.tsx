@@ -58,8 +58,8 @@ const Cart = () => {
             <p className={classes.price}>{`${item.price} sek`}</p>
             <div className={classes.quantityConatainer}></div>
             <ButtonGroup color="primary">
-              <Button color="primary">+</Button>
-              <Button></Button>
+              <Button color="primary" onClick={() => cartContext.increament(item)}>+</Button>
+              <Button>{item.quantity}</Button>
               <Button>-</Button>
             </ButtonGroup>
             <Button

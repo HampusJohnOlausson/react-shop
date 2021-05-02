@@ -11,7 +11,9 @@ interface CartItem {
   size: Array<{}>;
   category: string;
   gender: string;
+  quantity: number;
 }
+
 
 interface State {
     cart: CartItem[],
@@ -21,6 +23,7 @@ interface CartContextValue extends State{
     
     addProductToCart: (product: Product) => void;
     removeProductFromCart: (product: CartItem) => void;
+    increament: (product: CartItem) => void; 
     chooseSize: (product: any) => void;
     emptyCart: () => void;
     getTotal: () => void;
@@ -29,6 +32,7 @@ interface CartContextValue extends State{
 
 export const CartContext = createContext<CartContextValue>({
   addProductToCart: () => {},
+  increament: () => {},
   chooseSize: () => {},
   removeProductFromCart: () => {},
   emptyCart: () => {},
@@ -46,6 +50,13 @@ class CartProvider extends Component<{}, State> {
       cart: [],
     });
   };
+
+  increament = (product: CartItem) => {
+
+    if(product.id && product.size){
+      console.log(product);
+    }
+  }; 
 
   addProductToCart = (product: Product) => {
 
@@ -76,6 +87,7 @@ class CartProvider extends Component<{}, State> {
       <CartContext.Provider
         value={{
           cart: this.state.cart,
+          increament: this.increament,
           emptyCart: this.emptyCart,
           addProductToCart: this.addProductToCart,
           chooseSize: this.chooseSize,

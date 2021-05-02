@@ -1,5 +1,5 @@
 export interface Product {
-  id: string,  
+  id: string;
   image: string;
   title: string;
   description: string;
@@ -7,6 +7,7 @@ export interface Product {
   size: Array<{}>;
   category: string;
   gender: string;
+  quantity: number;
 }
 
 export const ProductData: Product[] = [
@@ -20,6 +21,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "tshirt",
     gender: "men",
+    quantity: 1,
   },
   {
     id: "2",
@@ -31,6 +33,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "tshirt",
     gender: "men",
+    quantity: 1,
   },
   {
     id: "3",
@@ -42,6 +45,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "tshirt",
     gender: "women",
+    quantity: 1,
   },
   {
     id: "4",
@@ -53,6 +57,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "tshirt",
     gender: "women",
+    quantity: 1,
   },
   {
     id: "5",
@@ -64,6 +69,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "hoodie",
     gender: "men",
+    quantity: 1,
   },
   {
     id: "6",
@@ -75,6 +81,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "hoodie",
     gender: "men",
+    quantity: 1,
   },
   {
     id: " 7",
@@ -86,6 +93,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "hoodie",
     gender: "women",
+    quantity: 1,
   },
   {
     id: "8",
@@ -97,6 +105,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "hoodie",
     gender: "women",
+    quantity: 1,
   },
   {
     id: "9",
@@ -108,6 +117,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "jacket",
     gender: "men",
+    quantity: 1,
   },
   {
     id: "10",
@@ -119,6 +129,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "jacket",
     gender: "men",
+    quantity: 1,
   },
   {
     id: "11",
@@ -130,6 +141,7 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "jacket",
     gender: "women",
+    quantity: 1,
   },
   {
     id: "12",
@@ -141,5 +153,6 @@ export const ProductData: Product[] = [
     size: ["XS", "S", "M", "L", "XL"],
     category: "jacket",
     gender: "women",
+    quantity: 1,
   },
 ];
