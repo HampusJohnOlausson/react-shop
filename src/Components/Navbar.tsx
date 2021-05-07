@@ -59,7 +59,7 @@ const Navbar = () => {
                 <li style={{ marginTop: "1rem" }}>Products</li>
               </Link>
               <Link to="/contact" className={classes.link}>
-                <li style={{ marginTop: "1rem" }}>Contakt</li>
+                <li style={{ marginTop: "1rem" }}>Contact</li>
               </Link>
               <Link to="/checkout" className={classes.link}>
                 <IconButton aria-label="cart">

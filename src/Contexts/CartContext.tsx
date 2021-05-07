@@ -16,7 +16,9 @@ interface CartItem {
 
 
 interface State {
-    cart: CartItem[],
+  cart: CartItem[];
+  quantity: Number;
+  total: Number;
 }
 
 interface CartContextValue extends State{
@@ -38,23 +40,35 @@ export const CartContext = createContext<CartContextValue>({
   emptyCart: () => {},
   getTotal: () => {},
   cart: [],
+  quantity: 0,
+  total: 0,
 });
 
 class CartProvider extends Component<{}, State> {
   state: State = {
     cart: [],
+    quantity: 0,
+    total: 0,
   };
 
   emptyCart = () => {
     this.setState({
       cart: [],
+      total: 0,
     });
   };
 
   increament = (product: CartItem) => {
 
-    if(product.id && product.size){
-      console.log(product);
+    const currentProduct = this.state.cart.find((specificProduct) => specificProduct.id === product.id);
+
+    if(currentProduct?.quantity !== undefined && currentProduct.size === product.size){
+     const updatedProductQuantity = currentProduct.quantity += 1;
+      this.setState({
+        quantity: updatedProductQuantity,
+        total: product.price * product.quantity,
+      })
+      console.log(this.state.total);
     }
   }; 
 
@@ -87,6 +101,8 @@ class CartProvider extends Component<{}, State> {
       <CartContext.Provider
         value={{
           cart: this.state.cart,
+          total: this.state.total,
+          quantity: this.state.quantity,
           increament: this.increament,
           emptyCart: this.emptyCart,
           addProductToCart: this.addProductToCart,
