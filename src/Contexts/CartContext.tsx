@@ -22,20 +22,20 @@ interface State {
   total: Number;
 }
 
-interface CartContextValue extends State{
-    
-    addProductToCart: (product: Product) => void;
-    removeProductFromCart: (product: CartItem) => void;
-    increament: (product: CartItem) => void; 
-    chooseSize: (product: any) => void;
-    emptyCart: () => void;
-    getTotal: (product: CartItem) => void;
-    
+interface CartContextValue extends State {
+  addProductToCart: (product: Product) => void;
+  removeProductFromCart: (product: CartItem) => void;
+  increament: (id: string) => void;
+  decrease: (id: string) => void;
+  chooseSize: (product: any) => void;
+  emptyCart: () => void;
+  getTotal: (product: CartItem) => void;
 }
 
 export const CartContext = createContext<CartContextValue>({
   addProductToCart: () => {},
   increament: () => {},
+  decrease: () => {},
   chooseSize: () => {},
   removeProductFromCart: () => {},
   emptyCart: () => {},
@@ -59,32 +59,40 @@ class CartProvider extends Component<{}, State> {
     });
   };
 
-  increament = (product: CartItem) => {
+  increament = (id: string) => {
+    this.state.cart.forEach(item => {
+      if(item.id === id){
+        item.quantity += 1;
+      }
+    })
+    this.setState({ cart: this.state.cart });
+    // this.getTotal();
+  };
 
-    const currentProduct = this.state.cart.find((specificProduct) => specificProduct.id === product.id);
-
-    if(currentProduct?.quantity !== undefined && currentProduct.size === product.size){
-     const updatedProductQuantity = currentProduct.quantity += 1;
-     const updatedPrice = product.price * product.quantity;
-      this.setState({
-        quantity: updatedProductQuantity,
-        total: updatedPrice,
-      })
-      console.log(this.state.total);
-    } 
-  }; 
+  decrease = (id: string) => {
+    this.state.cart.forEach(item => {
+      if(item.id === id){
+        item.quantity === 1 ? item.quantity = 1 : item.quantity -= 1;
+      }
+    })
+    this.setState({ cart: this.state.cart })
+    // this.getTotal();
+  };
 
   addProductToCart = (product: Product) => {
+    const currentProduct = this.state.cart.find(
+    (specificProduct) => specificProduct.id === product.id);
 
-    const currentProduct = this.state.cart.find((specificProduct) => specificProduct.id === product.id);
-    
-    if(currentProduct?.quantity !== undefined && currentProduct.size === product.size){
+    if (
+      currentProduct?.quantity !== undefined &&
+      currentProduct.size === product.size
+    ) {
       currentProduct.quantity += 1;
       const updateCart = [...this.state.cart];
       this.setState({ cart: updateCart });
-    }else {
+    } else {
       const quantity = 1;
-      const cartItem = {...product, quantity};
+      const cartItem = { ...product, quantity };
       let updateCart = [...this.state.cart, cartItem];
       this.setState({ cart: updateCart });
     }
@@ -99,13 +107,12 @@ class CartProvider extends Component<{}, State> {
     let cartIndex = currentCart.indexOf(product);
     currentCart.splice(cartIndex, 1);
     this.setState({
-        cart: currentCart
-    })
+      cart: currentCart,
+    });
   };
 
   getTotal = (product: CartItem) => {
-      const updatedTotal = product.price * Cart.length;
-      this.setState({ total: updatedTotal})
+    
   };
 
   render() {
@@ -117,6 +124,7 @@ class CartProvider extends Component<{}, State> {
           total: this.state.total,
           quantity: this.state.quantity,
           increament: this.increament,
+          decrease: this.decrease,
           emptyCart: this.emptyCart,
           addProductToCart: this.addProductToCart,
           chooseSize: this.chooseSize,
