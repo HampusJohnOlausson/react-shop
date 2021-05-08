@@ -72,6 +72,9 @@ const Cart = () => {
             </Button>
           </div>
         ))}
+        <div className="totalContainer">
+          <h4 className="total">Total: <span>{cartContext.total}</span></h4>
+        </div>
       </div>
     );
 }

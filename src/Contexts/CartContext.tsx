@@ -1,6 +1,7 @@
 import { createContext } from "react";
 import { Product } from "../Data/ProductData";
 import React, { Component } from "react";
+import Cart from "../Components/Cart/Cart";
 
 interface CartItem {
   id: string;
@@ -28,7 +29,7 @@ interface CartContextValue extends State{
     increament: (product: CartItem) => void; 
     chooseSize: (product: any) => void;
     emptyCart: () => void;
-    getTotal: () => void;
+    getTotal: (product: CartItem) => void;
     
 }
 
@@ -64,20 +65,29 @@ class CartProvider extends Component<{}, State> {
 
     if(currentProduct?.quantity !== undefined && currentProduct.size === product.size){
      const updatedProductQuantity = currentProduct.quantity += 1;
+     const updatedPrice = product.price * product.quantity;
       this.setState({
         quantity: updatedProductQuantity,
-        total: product.price * product.quantity,
+        total: updatedPrice,
       })
       console.log(this.state.total);
-    }
+    } 
   }; 
 
   addProductToCart = (product: Product) => {
 
-    const updateCart = [...this.state.cart, product];
-    this.setState({
-      cart: updateCart,
-    });
+    const currentProduct = this.state.cart.find((specificProduct) => specificProduct.id === product.id);
+    
+    if(currentProduct?.quantity !== undefined && currentProduct.size === product.size){
+      currentProduct.quantity += 1;
+      const updateCart = [...this.state.cart];
+      this.setState({ cart: updateCart });
+    }else {
+      const quantity = 1;
+      const cartItem = {...product, quantity};
+      let updateCart = [...this.state.cart, cartItem];
+      this.setState({ cart: updateCart });
+    }
   };
 
   chooseSize = (product: CartItem) => {
@@ -93,7 +103,10 @@ class CartProvider extends Component<{}, State> {
     })
   };
 
-  getTotal = () => {};
+  getTotal = (product: CartItem) => {
+      const updatedTotal = product.price * Cart.length;
+      this.setState({ total: updatedTotal})
+  };
 
   render() {
     console.log(this.state.cart);
