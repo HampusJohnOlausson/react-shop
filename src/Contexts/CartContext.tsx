@@ -29,7 +29,7 @@ interface CartContextValue extends State {
   decrease: (id: string) => void;
   chooseSize: (product: any) => void;
   emptyCart: () => void;
-  getTotal: (product: CartItem) => void;
+  getTotal: () => void;
 }
 
 export const CartContext = createContext<CartContextValue>({
@@ -66,7 +66,7 @@ class CartProvider extends Component<{}, State> {
       }
     })
     this.setState({ cart: this.state.cart });
-    // this.getTotal();
+    this.getTotal();
   };
 
   decrease = (id: string) => {
@@ -76,7 +76,7 @@ class CartProvider extends Component<{}, State> {
       }
     })
     this.setState({ cart: this.state.cart })
-    // this.getTotal();
+    this.getTotal();
   };
 
   addProductToCart = (product: Product) => {
@@ -90,12 +90,14 @@ class CartProvider extends Component<{}, State> {
       currentProduct.quantity += 1;
       const updateCart = [...this.state.cart];
       this.setState({ cart: updateCart });
+      this.getTotal();
     } else {
-      const quantity = 1;
-      const cartItem = { ...product, quantity };
-      let updateCart = [...this.state.cart, cartItem];
+      const cartItem = { ...product, quantity: 1 };
+      let updateCart = [ ...this.state.cart, cartItem];
       this.setState({ cart: updateCart });
+      this.getTotal();
     }
+    
   };
 
   chooseSize = (product: CartItem) => {
@@ -109,10 +111,17 @@ class CartProvider extends Component<{}, State> {
     this.setState({
       cart: currentCart,
     });
+    this.getTotal();
   };
 
-  getTotal = (product: CartItem) => {
-    
+  getTotal = () => {
+
+    const { cart } = this.state;
+    let total = cart.reduce((prev, product) => {
+      return prev + (product.price * product.quantity);
+    }, 0)
+    this.setState({ total: total });
+    console.log(total);
   };
 
   render() {
