@@ -9,7 +9,7 @@ const useStyles = makeStyles(() => ({
     flexDirection: "column",
   },
   productContainer: {
-    padding: '2rem 1rem',
+    padding: "2rem 1rem",
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
@@ -31,7 +31,11 @@ const useStyles = makeStyles(() => ({
   },
   quantityConatainer: {},
   empty: {
-    textAlign: 'center'
+    textAlign: "center",
+  },
+  total: {
+    textAlign: "center",
+    fontSize: "2rem",
   },
 }));
 
@@ -73,7 +77,7 @@ const Cart = () => {
           </div>
         ))}
         <div className="totalContainer">
-          <h4 className="total">Total: <span>{cartContext.total}</span></h4>
+          <h4 className={classes.total}>Total: <span>{cartContext.total}</span> $</h4>
         </div>
       </div>
     );
