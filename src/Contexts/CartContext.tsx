@@ -9,7 +9,7 @@ interface CartItem {
   title: string;
   description: string;
   price: number;
-  size: Array<{}>;
+  size: string;
   category: string;
   gender: string;
   quantity: number;

@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { useRouteMatch } from 'react-router';
 import { ProductContext } from '../../Contexts/ProductContext';
-import { Button } from "@material-ui/core";
+import { Button, Size } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
-import { Product } from "../../Data/ProductData";
+import { Product, ProductData } from "../../Data/ProductData";
 import { makeStyles } from '@material-ui/core'
 import ProductList from './ProductList';
 import { classicNameResolver } from 'typescript';
@@ -55,25 +55,21 @@ const ProductDetails = (props: Props) => {
   const classes = useStyles();
   
   const cartContext = useContext(CartContext);
-  const productContext = useContext(ProductContext);
-  const match = useRouteMatch<{
-    id?: string | undefined;
-    product?: string | undefined;
-    size?: string| undefined;
-  }>();
+  const match = useRouteMatch<{id: string}>();
 
-    let specificProduct = productContext.products.find(
+    let specificProduct = ProductData.find(
       (p) => p.id === match.params.id
-    );
-
-  const chooseSize = (sizes: object | undefined) => {
-    // let specificProductSize = productContext.products.find((pt) => pt.size === match.params.size);
-    // console.log(specificProductSize)
-
-    // const specificProduct?.size = sizes;
-    console.log(sizes)
-  }
-
+      );
+      
+    const [isSize, setSize] = useState(false);
+    
+    const handleClick = (size: string) => {
+      if(specificProduct){
+         specificProduct.size = size;
+         setSize(!isSize);
+      }
+    } 
+      
   if(!specificProduct){
 
     return <div>
@@ -91,17 +87,36 @@ const ProductDetails = (props: Props) => {
             <div className="sizeContainer">
               <h5>Size:</h5>
               <div>
-                {specificProduct.size.map((specificSize, index) => (
-                  <Button
-                    key={index}
-                    size="small"
-                    variant="contained"
-                    onClick={() => chooseSize(specificSize)}
-                    className={classes.sizeBtn}
-                  >
-                    {specificSize}
-                  </Button>
-                ))}
+                <Button
+                  onClick={() => handleClick("S")}
+                  className={classes.sizeBtn}
+                >
+                  XS
+                </Button>
+                <Button
+                  onClick={() => handleClick("S")}
+                  className={classes.sizeBtn}
+                >
+                  S
+                </Button>
+                <Button
+                  onClick={() => handleClick("M")}
+                  className={classes.sizeBtn}
+                >
+                  M
+                </Button>
+                <Button
+                  onClick={() => handleClick("L")}
+                  className={classes.sizeBtn}
+                >
+                  L
+                </Button>
+                <Button
+                  onClick={() => handleClick("XL")}
+                  className={classes.sizeBtn}
+                >
+                  XL
+                </Button>
               </div>
             </div>
             <Button
