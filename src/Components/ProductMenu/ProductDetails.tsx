@@ -1,14 +1,10 @@
 import React, { useContext, useState } from 'react'
 import { useRouteMatch } from 'react-router';
-import { ProductContext } from '../../Contexts/ProductContext';
-import { Button, Size } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import { CartContext } from '../../Contexts/CartContext';
 import { Product, ProductData } from "../../Data/ProductData";
 import { makeStyles } from '@material-ui/core'
-import ProductList from './ProductList';
-import { classicNameResolver } from 'typescript';
-
 
 const useStyles = makeStyles((theme) => ({
   wrapper: {
@@ -43,6 +39,37 @@ const useStyles = makeStyles((theme) => ({
       background: "#20A5CF",
     },
   },
+  activeBtn: {
+    width: "13rem",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    margin: "2rem",
+    padding: "1rem",
+    borderRadius: ".4rem",
+    background: "#13D79B",
+    boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
+    color: "white",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    "&:hover": {
+      background: "#18B988",
+    },
+  },
+  nonActiveBtn: {
+    width: "13rem",
+    margin: "2rem",
+    padding: "1rem",
+    boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
+    borderRadius: ".4rem",
+    background: "grey",
+    color: "white",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    "&:hover": {
+      background: "grey",
+    },
+  },
 }));
 
 interface Props {
@@ -63,7 +90,7 @@ const ProductDetails = (props: Props) => {
       
     const [isSize, setSize] = useState(false);
     
-    const handleClick = (size: string) => {
+    const chooseSize = (size: string) => {
       if(specificProduct){
          specificProduct.size = size;
          setSize(!isSize);
@@ -88,45 +115,48 @@ const ProductDetails = (props: Props) => {
               <h5>Size:</h5>
               <div>
                 <Button
-                  onClick={() => handleClick("S")}
+                  onClick={() => chooseSize("S")}
                   className={classes.sizeBtn}
                 >
                   XS
                 </Button>
                 <Button
-                  onClick={() => handleClick("S")}
+                  onClick={() => chooseSize("S")}
                   className={classes.sizeBtn}
                 >
                   S
                 </Button>
                 <Button
-                  onClick={() => handleClick("M")}
+                  onClick={() => chooseSize("M")}
                   className={classes.sizeBtn}
                 >
                   M
                 </Button>
                 <Button
-                  onClick={() => handleClick("L")}
+                  onClick={() => chooseSize("L")}
                   className={classes.sizeBtn}
                 >
                   L
                 </Button>
                 <Button
-                  onClick={() => handleClick("XL")}
+                  onClick={() => chooseSize("XL")}
                   className={classes.sizeBtn}
                 >
                   XL
                 </Button>
               </div>
             </div>
-            <Button
-              size="small"
-              variant="contained"
-              onClick={() => cartContext.addProductToCart(specificProduct!)}
-            >
-              {" "}
-              <ShoppingCartIcon />{" "}
-            </Button>
+            {isSize ? 
+              <Button
+                className={classes.activeBtn}
+                onClick={() => cartContext.addProductToCart(specificProduct!)}
+              >
+                Add To Cart{" "}
+                <ShoppingCartIcon />{" "}
+              </Button>
+             : 
+            <Button className={classes.nonActiveBtn}>Choose Size</Button>
+            }
           </div>
         </div>
       </div>
