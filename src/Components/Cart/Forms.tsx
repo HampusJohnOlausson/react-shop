@@ -1,5 +1,6 @@
 import { Button, makeStyles, Step, StepLabel, Stepper } from '@material-ui/core'
 import React, { useState } from 'react'
+import PersonalDetails from './PersonalDetails';
 
 const useStyles = makeStyles(() => ({
   mainContainer: {
@@ -20,6 +21,11 @@ const Forms = () => {
     const classes = useStyles();
     const [activeStep, setActiveStep] = useState(0);
 
+
+    // function getSteps(){
+    //   return [<PersonalDetails/>]
+    // }
+
     const nextStep = () => {
         if(activeStep < 2){
         setActiveStep((currentStep) => currentStep + 1)
@@ -37,6 +43,7 @@ const Forms = () => {
         <Stepper activeStep={activeStep}>
           <Step>
             <StepLabel>Personal Details</StepLabel>
+            <PersonalDetails/>
           </Step>
           <Step>
             <StepLabel>Shipping Details</StepLabel>
