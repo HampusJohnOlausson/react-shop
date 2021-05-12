@@ -70,7 +70,7 @@ const Cart = () => {
               color="secondary"
               size="small"
               variant="contained"
-              onClick={() => cartContext.removeProductFromCart(item)}
+              onClick={() => cartContext.removeProductFromCart(item.id!)}
             >
               <DeleteIcon />
             </Button>

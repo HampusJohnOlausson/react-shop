@@ -1,7 +1,6 @@
 import { createContext } from "react";
 import { Product } from "../Data/ProductData";
 import React, { Component } from "react";
-import Cart from "../Components/Cart/Cart";
 
 interface CartItem {
   id: string;
@@ -24,12 +23,12 @@ interface State {
 
 interface CartContextValue extends State {
   addProductToCart: (product: Product) => void;
-  removeProductFromCart: (product: CartItem) => void;
+  removeProductFromCart: (id: string) => void;
   increament: (id: string) => void;
   decrease: (id: string) => void;
   chooseSize: (product: any) => void;
   emptyCart: () => void;
-  getTotal: () => void;
+  getTotal: (cart: any) => void;
 }
 
 export const CartContext = createContext<CartContextValue>({
@@ -104,13 +103,14 @@ class CartProvider extends Component<{}, State> {
     console.log(product);
   };
 
-  removeProductFromCart = (product: Product) => {
-    const currentCart = [...this.state.cart];
-    let cartIndex = currentCart.indexOf(product);
-    currentCart.splice(cartIndex, 1);
-    this.setState({
-      cart: currentCart,
-    });
+  removeProductFromCart = (id: string) => {
+    const { cart }  = this.state;
+    cart.forEach((product, index) => {
+      if(product.id === id){
+        cart.splice(index, 1);
+      }
+    })
+    this.setState({cart: cart});
     this.getTotal();
   };
 
