@@ -5,6 +5,8 @@ const useStyles = makeStyles(() => ({
     form: {
         display: 'flex',
         flexDirection: 'column',
+        background: 'white',
+        color: 'white',
     }
 }));
 
