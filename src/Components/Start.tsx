@@ -15,8 +15,8 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   heroContainer: {
-    width: "80%",
-    height: "37rem",
+    width: "100%",
+    height: "45rem",
     backgroundImage: `url(${Background})`,
     backgroundSize: "cover",
     display: "flex",

@@ -1,15 +1,6 @@
 import { Button, makeStyles, TextField } from '@material-ui/core'
 import React, { ChangeEvent, useState } from 'react'
 
-const useStyles = makeStyles(() => ({
-    form: {
-        display: 'flex',
-        flexDirection: 'column',
-        background: 'white',
-        color: 'white',
-    }
-}));
-
 const PersonalDetails = () => {
   const classes = useStyles(makeStyles);
 
@@ -112,6 +103,8 @@ const PersonalDetails = () => {
           error={Boolean(firstNameError)}
         />
         <TextField
+          InputLabelProps={{ className: classes.label }}
+          InputProps={{ className: classes.input }}
           label="Lastname"
           type="text"
           required
@@ -125,6 +118,8 @@ const PersonalDetails = () => {
           error={Boolean(lastNameError)}
         />
         <TextField
+          InputLabelProps={{ className: classes.label }}
+          InputProps={{ className: classes.input }}
           label="E-mail"
           type="text"
           required
@@ -138,6 +133,8 @@ const PersonalDetails = () => {
           error={Boolean(mailError)}
         />
         <TextField
+          InputLabelProps={{ className: classes.label }}
+          InputProps={{ className: classes.input }}
           label="Phone Number"
           required
           fullWidth
@@ -150,6 +147,8 @@ const PersonalDetails = () => {
           error={Boolean(numberError)}
         />
         <TextField
+          InputLabelProps={{ className: classes.label }}
+          InputProps={{ className: classes.input }}
           label="Adress"
           required
           fullWidth
@@ -162,6 +161,8 @@ const PersonalDetails = () => {
           error={Boolean(adressError)}
         />
         <TextField
+          InputLabelProps={{ className: classes.label }}
+          InputProps={{ className: classes.input }}
           label="Zip Code"
           required
           fullWidth
@@ -174,6 +175,8 @@ const PersonalDetails = () => {
           error={Boolean(zipError)}
         />
         <TextField
+          InputLabelProps={{ className: classes.label }}
+          InputProps={{ className: classes.input }}
           label="City"
           required
           fullWidth
@@ -185,12 +188,46 @@ const PersonalDetails = () => {
           helperText={cityError}
           error={Boolean(cityError)}
         />
-        <Button type="submit" variant="contained">
+        <Button
+          className={classes.confirmBtn}
+          type="submit"
+          variant="contained"
+        >
           Confirm
         </Button>
       </form>
     </div>
   );
 };
+
+const useStyles = makeStyles(() => ({
+  form: {
+    display: "flex",
+    flexDirection: "column",
+    width: "50rem",
+    color: "white",
+    padding: "1rem",
+  },
+  label: {
+    color: "#28c7fa",
+  },
+  input: {
+    color: '#fff',
+  },
+  confirmBtn: {
+    background: "#13D79B",
+    color: "#fff",
+    width: "10rem",
+    margin: "1rem 0rem",
+    borderRadius: ".5rem",
+    padding: ".5rem 2rem",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    transitionDuration: "0.4s",
+    "&:hover": {
+      background: "#18B988",
+    },
+  },
+}));
 
 export default PersonalDetails

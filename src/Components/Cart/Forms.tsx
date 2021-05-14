@@ -14,8 +14,28 @@ const useStyles = makeStyles(() => ({
     margin: "1rem auto",
     boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
   },
-  formTitle: {
-  }
+  stepper: {
+    width: "100%",
+    color: "red",
+  },
+  step: {
+    color: "red",
+  },
+  formTitle: {},
+  btn: {
+    background: "#28c7fa",
+    color: "#fff",
+    width: "10rem",
+    margin: ".5rem 0rem",
+    borderRadius: ".5rem",
+    padding: ".5rem 2rem",
+    fontSize: "1rem",
+    fontWeight: "bold",
+    transitionDuration: "0.4s",
+    "&:hover": {
+      background: "#20A5CF",
+    },
+  },
 }));
 
 function getSteps(){
@@ -55,10 +75,12 @@ const Forms = () => {
     return (
       <div className={classes.mainContainer}>
         <h1 className={classes.formTitle}>Checkout</h1>
-        <Stepper activeStep={activeStep}>
+        <Stepper className={classes.stepper} activeStep={activeStep}>
           {steps.map((label) => (
             <Step>
-              <StepLabel />
+              <StepLabel StepIconProps={{classes: {
+                active: classes.step}
+                }} />
             </Step>
           ))}
         </Stepper>
@@ -75,10 +97,20 @@ const Forms = () => {
             </div>
           )}
         </div>
-        <Button onClick={() => nextStep()} color="primary" variant="contained">
+        <Button
+          className={classes.btn}
+          onClick={() => nextStep()}
+          color="primary"
+          variant="contained"
+        >
           Next Step
         </Button>
-        <Button onClick={() => prevStep()} color="primary" variant="contained">
+        <Button
+          className={classes.btn}
+          onClick={() => prevStep()}
+          color="primary"
+          variant="contained"
+        >
           Prev Step
         </Button>
       </div>

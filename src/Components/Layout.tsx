@@ -1,19 +1,11 @@
-import { makeStyles } from '@material-ui/core'
 import React from 'react'
 import Main from './Main'
 import Navbar from './Navbar'
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    minHeight: "100vh",
-    backgroundColor: "#1D1C1C",
-    color: "#fff",
-  },
-}));
+import startStyles from '../Components/StartStyle'
 
 const Layout = () => {
 
-    const classes = useStyles();
+    const classes = startStyles();
 
     return (
         <div className={classes.root}>

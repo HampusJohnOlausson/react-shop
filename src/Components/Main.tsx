@@ -8,7 +8,6 @@ import ProductPage from './ProductMenu/ProductPage';
 
 const Main = () => {
 
-
     return (
       <div>
         <Switch>
