@@ -1,6 +1,6 @@
 import { makeStyles } from "@material-ui/core";
 
-export const startStyles = makeStyles((theme) => ({
+export const layoutStyles = makeStyles((theme) => ({
   root: {
     minHeight: "100vh",
     backgroundColor: "#1D1C1C",
@@ -9,4 +9,4 @@ export const startStyles = makeStyles((theme) => ({
 }));
 
 
-export default startStyles;
+export default layoutStyles;

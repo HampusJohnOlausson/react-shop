@@ -3,48 +3,12 @@ import { Link } from 'react-router-dom';
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import Badge from "@material-ui/core/Badge";
 import { CartContext } from '../Contexts/CartContext';
-import { makeStyles } from "@material-ui/core";
-
+import navStyles from '../Style/NavStyles';
 import { useContext} from "react"
-
-const useStyles = makeStyles(() => ({
-  root: {
-    minHeight: "15vh",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  
-  },
-  nav: {
-    width: "75%",
-  },
-  list: {
-    width: "100%;",
-    display: "flex",
-    justifyContent: "space-between",
-    listStyle: "none",
-    fontSize: "1.4rem",
-  },
-  home: {
-    fontFamily: 'Mr Dafoe, cursive',
-    color: "#28c7fa",
-    fontWeight: "normal",
-    fontSize: "3rem",
-  },
-  icon: {
-    fontSize: "2.5rem",
-    cursor: "pointer",
-  },
-  link: {
-    textDecoration: "none",
-    color: "#fff",
-  },
-}));
 
 const Navbar = () => {
   
-    const classes = useStyles();
+    const classes = navStyles();
 
     const cartContext = useContext(CartContext);
 

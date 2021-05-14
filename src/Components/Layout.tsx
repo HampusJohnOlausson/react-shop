@@ -1,11 +1,11 @@
 import React from 'react'
 import Main from './Main'
 import Navbar from './Navbar'
-import startStyles from '../Components/StartStyle'
+import layoutStyles from '../Style/LayoutStyles'
 
 const Layout = () => {
 
-    const classes = startStyles();
+    const classes = layoutStyles();
 
     return (
         <div className={classes.root}>

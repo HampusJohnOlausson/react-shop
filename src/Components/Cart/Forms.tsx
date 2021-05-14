@@ -1,42 +1,9 @@
-import { Button, makeStyles, Step, StepLabel, Stepper, Typography } from '@material-ui/core'
+import { Button, Step, StepLabel, Stepper, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
 import DelivaryDetails from './DelivaryDetails';
 import PaymentDetails from './PaymentDetails';
 import PersonalDetails from './PersonalDetails';
-
-const useStyles = makeStyles(() => ({
-  mainContainer: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    width: "80%",
-    margin: "1rem auto",
-    boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
-  },
-  stepper: {
-    width: "100%",
-    color: "red",
-  },
-  step: {
-    color: "red",
-  },
-  formTitle: {},
-  btn: {
-    background: "#28c7fa",
-    color: "#fff",
-    width: "10rem",
-    margin: ".5rem 0rem",
-    borderRadius: ".5rem",
-    padding: ".5rem 2rem",
-    fontSize: "1rem",
-    fontWeight: "bold",
-    transitionDuration: "0.4s",
-    "&:hover": {
-      background: "#20A5CF",
-    },
-  },
-}));
+import formsStyles from '../../Style/FormsStyles';
 
 function getSteps(){
       return [<PersonalDetails/>, <DelivaryDetails/>, <PaymentDetails/>];
@@ -57,7 +24,7 @@ function getStepContent(stepIndex: number){
 
 const Forms = () => {
 
-    const classes = useStyles();
+    const classes = formsStyles();
     const [activeStep, setActiveStep] = useState(0);
     const steps = getSteps();
 

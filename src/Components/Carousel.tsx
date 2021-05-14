@@ -1,50 +1,15 @@
 import { NewArrivals } from '../Data/NewArrivals'
 import React, { useState } from "react";
 import { ArrowLeft, ArrowRight } from "@material-ui/icons";
-import { makeStyles } from "@material-ui/core";
+import carouselStyles from '../Style/CarouselStyles'
 import '../Style/Carousel.css';
-
-
-const useStyles = makeStyles((theme) => ({
-  slider: {
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    position: "relative",
-    alignItems: "center",
-  },
-  image: {
-    borderRadius: ".5rem",
-    height: "45rem",
-    margin: "3rem 2rem 10rem",
-    boxShadow: "0 15px 25px rgba(0, 0, 0, 0.5)",
-  },
-  arrowRight: {
-    fontSize: "5rem",
-    cursor: "pointer",
-    position: "absolute",
-    top: "50%",
-    right: "-5rem",
-    zIndex: 10,
-    userSelect: "none",
-  },
-  arrowLeft: {
-    fontSize: "5rem",
-    cursor: "pointer",
-    position: "absolute",
-    left: "-5rem",
-    top: "50%",
-    zIndex: 10,
-    userSelect: "none",
-  },
-}));
 
 interface Props {
   NewArrivals: Array<{}>
 }
 const Carousel = (props: Props) => {
 
-    const classes = useStyles();
+    const classes = carouselStyles();
 
     const [current, setCurrent] = useState(1);
     const length = NewArrivals.length;

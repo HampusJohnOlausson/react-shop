@@ -1,22 +1,11 @@
 import React from 'react'
 import Cart from './Cart'
 import Forms from './Forms';
-import { makeStyles } from "@material-ui/core";
-
-const useStyles = makeStyles(() => ({
-  root: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-  title: {
-      textAlign: 'center',
-  }
- 
-}));
+import checkoutStyles from '../../Style/CheckoutStyles';
 
 const Checkout = () => {
 
-    const classes = useStyles();
+    const classes = checkoutStyles();
 
     return (
         <div className={classes.root}>
