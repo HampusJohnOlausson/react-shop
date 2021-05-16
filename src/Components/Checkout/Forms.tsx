@@ -1,7 +1,7 @@
 import { Button, Step, StepLabel, Stepper, Typography } from '@material-ui/core'
 import React, { useState } from 'react'
 import DelivaryDetails from './DelivaryDetails';
-import PaymentDetails from './PaymentDetails';
+import PaymentDetails from './Payment/PaymentDetails';
 import PersonalDetails from './PersonalDetails';
 import formsStyles from '../../Style/FormsStyles';
 
