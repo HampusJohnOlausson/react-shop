@@ -14,12 +14,16 @@ const ProductList = () => {
     })
 
     return (
+      <div>
+        <div className={classes.inputContainer}>
+          <input className={classes.input} placeholder="Search for a product..." type="text" onChange={(e) => setSearch(e.target.value)} />
+        </div>
         <div className={classes.list}>
-          <input type="text" onChange={(e) => setSearch(e.target.value)} />
           {filteredProducts.map((product: any) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
+      </div>
     );
 }
 
