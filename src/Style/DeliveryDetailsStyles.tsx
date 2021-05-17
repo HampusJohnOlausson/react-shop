@@ -2,8 +2,11 @@ import { makeStyles } from "@material-ui/core";
 
 
 const deliveryDetailsStyles = makeStyles(() => ({
-   title: {
-    textAlign: 'center',
+  title: {
+    textAlign: "center",
+  },
+  price: {
+    fontSize: "1.4rem",
   },
   btn: {
     display: "flex",
