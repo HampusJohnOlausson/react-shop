@@ -3885,6 +3885,13 @@
     "safe-buffer" "^5.0.1"
     "sha.js" "^2.4.8"
 
+"credit-cards@^0.5.3":
+  "integrity" "sha1-196CKRK14XD8jaVRbo8Mrby0bt8="
+  "resolved" "https://registry.npmjs.org/credit-cards/-/credit-cards-0.5.3.tgz"
+  "version" "0.5.3"
+  dependencies:
+    "luhn" "1.0.5"
+
 "cross-spawn@^6.0.0":
   "integrity" "sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ=="
   "resolved" "https://registry.npmjs.org/cross-spawn/-/cross-spawn-6.0.5.tgz"
@@ -7656,6 +7663,11 @@
   "version" "6.0.0"
   dependencies:
     "yallist" "^4.0.0"
+
+"luhn@1.0.5":
+  "integrity" "sha1-Pe73Z6Z76/IfoYjYt2c3u4d4xrQ="
+  "resolved" "https://registry.npmjs.org/luhn/-/luhn-1.0.5.tgz"
+  "version" "1.0.5"
 
 "lz-string@^1.4.4":
   "integrity" "sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY="
