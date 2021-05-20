@@ -114,6 +114,11 @@ class CartProvider extends Component<{}, State> {
     this.getTotal();
   };
 
+  componentDidUpdate = () => {
+    localStorage.setItem('Products', JSON.stringify(this.state.cart));
+    localStorage.setItem('Total', JSON.stringify(this.state.total))
+  }
+
   getTotal = () => {
 
     const { cart } = this.state;
