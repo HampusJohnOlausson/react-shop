@@ -1,9 +1,12 @@
 import { Button, TextField, makeStyles } from '@material-ui/core'
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, useContext, useState } from 'react'
+import { UserContext } from '../../Contexts/UserContext';
 import personalDetailsStyles from '../../Style/PersonalDetailsStyles'
 
 const PersonalDetails = () => {
+
   const classes = personalDetailsStyles(makeStyles);
+  const user = useContext(UserContext);
 
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
@@ -19,8 +22,7 @@ const PersonalDetails = () => {
     } else {
       setFirstNameError("");
     }
-    console.log(e.target.value);
-    // user.addName(e);
+    user.addFirstName(e);
   };
 
   const handleLastName = (e: ChangeEvent<HTMLInputElement>) => {
@@ -190,6 +192,7 @@ const PersonalDetails = () => {
           error={Boolean(cityError)}
         />
         <Button
+          onClick={user.addInfoToObject}
           className={classes.confirmBtn}
           type="submit"
           variant="contained"
