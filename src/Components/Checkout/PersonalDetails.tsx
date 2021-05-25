@@ -32,7 +32,7 @@ const PersonalDetails = () => {
       setLastNameError("");
     }
     console.log(e.target.value);
-    // user.addName(e);
+    user.addLastName(e);
   };
 
   const handleMail = (e: ChangeEvent<HTMLInputElement>) => {
@@ -46,7 +46,7 @@ const PersonalDetails = () => {
       setMailError("");
     }
     console.log(e.target.value);
-    // user.addName(e);
+    user.addMail(e);
   };
 
   const handleNumber = (e: ChangeEvent<HTMLInputElement>) => {
@@ -56,7 +56,7 @@ const PersonalDetails = () => {
       setNumberError("");
     }
     console.log(e.target.value);
-    // user.addName(e);
+    user.addPhoneNumber(e);
   };
 
   const handleAdress = (e: ChangeEvent<HTMLInputElement>) => {
@@ -66,7 +66,7 @@ const PersonalDetails = () => {
       setAdressError("");
     }
     console.log(e.target.value);
-    // user.addName(e);
+    user.addAdress(e);
   };
 
   const handleZip = (e: ChangeEvent<HTMLInputElement>) => {
@@ -76,7 +76,7 @@ const PersonalDetails = () => {
       setZipError("");
     }
     console.log(e.target.value);
-    // user.addName(e);
+    user.addZipCode(e);
   };
 
   const handleCity = (e: ChangeEvent<HTMLInputElement>) => {
@@ -86,7 +86,7 @@ const PersonalDetails = () => {
       setCityError("");
     }
     console.log(e.target.value);
-    // user.addName(e);
+    user.addCity(e);
   };
 
   return (
