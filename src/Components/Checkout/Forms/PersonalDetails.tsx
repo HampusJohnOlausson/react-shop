@@ -1,7 +1,7 @@
 import { Button, TextField, makeStyles } from '@material-ui/core'
 import React, { ChangeEvent, useContext, useState } from 'react'
-import { UserContext } from '../../Contexts/UserContext';
-import personalDetailsStyles from '../../Style/PersonalDetailsStyles'
+import { UserContext } from '../../../Contexts/UserContext';
+import personalDetailsStyles from '../../../Style/PersonalDetailsStyles'
 
 const PersonalDetails = () => {
 
@@ -16,6 +16,8 @@ const PersonalDetails = () => {
   const [zipError, setZipError] = useState('');
   const [cityError, setCityError] = useState("");
 
+  const [active, setActive] = useState(false);
+
   const handleFirstName = (e: ChangeEvent<HTMLInputElement>) => {
     if (!/^[a-öA-Ö\s,'-]+$/.test(e.target.value)) {
       setFirstNameError("Name is not valid");
@@ -23,6 +25,8 @@ const PersonalDetails = () => {
       setFirstNameError("");
     }
     user.addFirstName(e);
+    setActive(true);
+
   };
 
   const handleLastName = (e: ChangeEvent<HTMLInputElement>) => {
@@ -31,8 +35,8 @@ const PersonalDetails = () => {
     } else {
       setLastNameError("");
     }
-    console.log(e.target.value);
     user.addLastName(e);
+    setActive(true);
   };
 
   const handleMail = (e: ChangeEvent<HTMLInputElement>) => {
@@ -191,14 +195,20 @@ const PersonalDetails = () => {
           helperText={cityError}
           error={Boolean(cityError)}
         />
-        <Button
-          onClick={user.addInfoToObject}
-          className={classes.confirmBtn}
-          type="submit"
-          variant="contained"
-        >
-          Confirm
-        </Button>
+        {active ? (
+          <Button
+            onClick={user.addInfoToObject}
+            className={classes.confirmBtn}
+            type="submit"
+            variant="contained"
+          >
+            Confirm
+          </Button>
+        ) : (
+          <Button className={classes.nonActiveBtn} variant="contained">
+            Confirm
+          </Button>
+        )}
       </form>
     </div>
   );

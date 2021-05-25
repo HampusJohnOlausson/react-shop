@@ -28,6 +28,20 @@ const personalDetailsStyles = makeStyles(() => ({
       background: "#18B988",
     },
   },
+  nonActiveBtn: {
+    background: "grey",
+    color: "#fff",
+    width: "10rem",
+    margin: "1rem 0rem",
+    borderRadius: ".5rem",
+    padding: ".5rem 2rem",
+    fontSize: "1.2rem",
+    fontWeight: "bold",
+    transitionDuration: "0.4s",
+    "&:hover": {
+      background: "grey",
+    },
+  },
 }));
 
 export default personalDetailsStyles;

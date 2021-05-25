@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import DelivaryDetails from './DelivaryDetails';
 import PaymentDetails from './Payment/PaymentDetails';
 import PersonalDetails from './PersonalDetails';
-import formsStyles from '../../Style/FormsStyles';
+import formsStyles from '../../../Style/FormsStyles';
 
 function getSteps(){
       return [<PersonalDetails/>, <DelivaryDetails/>, <PaymentDetails/>];

@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary, Button, TextField } from '@material-ui/core'
 import React, { useState, ChangeEvent } from 'react'
-import paymentStyles from '../../../Style/PaymentStyles'
+import paymentStyles from '../../../../Style/PaymentStyles'
 
 const CardDetails = () => {
 

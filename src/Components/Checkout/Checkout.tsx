@@ -1,6 +1,6 @@
 import React from 'react'
 import Cart from './Cart'
-import Forms from './Forms';
+import Forms from './Forms/Forms';
 import checkoutStyles from '../../Style/CheckoutStyles';
 
 const Checkout = () => {

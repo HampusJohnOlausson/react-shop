@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import deliveryDetailsStyles from '../../Style/DeliveryDetailsStyles'
+import deliveryDetailsStyles from '../../../Style/DeliveryDetailsStyles'
 
 const DelivaryDetails = () => {
 
     const classes = deliveryDetailsStyles();
-    const [chosenDelivery, setChosenDelivery] = useState('');
+    const [chosenDelivery, setChosenDelivery] = useState(false);
 
     const choseCompany = (company: string) => {
-        setChosenDelivery(company);
+        setChosenDelivery(!chosenDelivery);
         console.log(company);
     }
 
