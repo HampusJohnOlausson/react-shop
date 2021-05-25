@@ -2,6 +2,7 @@ import { Button, TextField, makeStyles } from '@material-ui/core'
 import React, { ChangeEvent, useContext, useState } from 'react'
 import { UserContext } from '../../../Contexts/UserContext';
 import personalDetailsStyles from '../../../Style/PersonalDetailsStyles'
+import { useForm } from 'react-hooks-forms'
 
 const PersonalDetails = () => {
 
@@ -25,7 +26,6 @@ const PersonalDetails = () => {
       setFirstNameError("");
     }
     user.addFirstName(e);
-    setActive(true);
 
   };
 
@@ -92,6 +92,10 @@ const PersonalDetails = () => {
     console.log(e.target.value);
     user.addCity(e);
   };
+
+   const { register, handleSubmit, formState } = useForm({
+     mode: "onChange",
+   });
 
   return (
     <div>
@@ -195,20 +199,15 @@ const PersonalDetails = () => {
           helperText={cityError}
           error={Boolean(cityError)}
         />
-        {active ? (
           <Button
             onClick={user.addInfoToObject}
             className={classes.confirmBtn}
             type="submit"
             variant="contained"
+            disabled={!formState.isValid}
           >
             Confirm
           </Button>
-        ) : (
-          <Button className={classes.nonActiveBtn} variant="contained">
-            Confirm
-          </Button>
-        )}
       </form>
     </div>
   );
