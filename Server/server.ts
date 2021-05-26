@@ -1,6 +1,5 @@
 import express from 'express';
 import mongoose from 'mongoose';
-import cookieSession from "cookie-session";
 
 const PORT = process.env.PORT || 5000; 
 const app = express();
