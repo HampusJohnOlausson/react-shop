@@ -1,7 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 
-const PORT = process.env.PORT || 5000; 
+const PORT = process.env.PORT || 6000; 
 const app = express();
 
 const url ="mongodb+srv://hampusOlausson:Kurt3234Olsson@cluster0.xzbwr.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
