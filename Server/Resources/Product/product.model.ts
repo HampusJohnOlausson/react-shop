@@ -11,12 +11,23 @@ interface Product {
 }
 
 const productVariant = new mongoose.Schema({
-    size: Number, 
+    size: String, 
     stock: Number, 
     quantity: Number
 })
 const productSchema = new mongoose.Schema({
   title: {
+    type: String,
+    required: true,
+    validate: {
+      validator: function (value: any) {
+        const titleRegex = /^[a-öA-Ö\s,'-]+$/;
+        return titleRegex.test(value);
+      },
+      message: "Title must be a string",
+    },
+  },
+  description: {
     type: String,
     required: true,
     validate: {
@@ -43,7 +54,7 @@ const productSchema = new mongoose.Schema({
       message: "Category must be a string",
     },
   },
-  variants: [productVariant]
+  variants: [productVariant],
 });
 
 module.exports = mongoose.model<Product>('Products', productSchema);

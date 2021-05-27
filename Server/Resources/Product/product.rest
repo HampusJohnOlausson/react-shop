@@ -1,3 +1,21 @@
-GET http://localhost:6000/products/getProducts/
+GET http://localhost:6000/products/
 
 ###
+
+GET
+
+### 
+
+POST http://localhost:6000/products/
+Content-Type: application/json
+
+{
+    "title": "Blue Hoodie",
+    "description": "bla bla bla",
+    "price": 299,
+    "size": "S",
+    "category": "Unisex", 
+    "stock": 10, 
+    "quantity": 1
+   
+}

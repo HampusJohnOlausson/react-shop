@@ -12,3 +12,34 @@ module.exports.getProducts = async function(req: Request, res: Response) {
     }
 };
 
+// module.exports.getSpecificProduct = async function(req: Request, res: Response) {
+    
+// }
+
+module.exports.addProduct = async function(req: Request, res: Response){
+
+    if(req.body){
+        if(!req.body.title){
+            return res.status(400).json('Cant add product');
+        }
+
+
+        const product = new Product({
+            title: req.body.title,
+            description: req.body.description,
+            price: req.body.price, 
+            category: req.body.category,
+        })
+
+        product.variants.push({
+            size: req.body.size,
+            stock: req.body.stock, 
+            quantity: req.body.quantity
+        })
+
+        await product.save(function(error: any){
+            console.log(error);
+        })
+        res.status(201).json(product);
+    }
+};
