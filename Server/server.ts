@@ -1,5 +1,6 @@
 import express from 'express';
 import mongoose from 'mongoose';
+import productRouter from './Resources/Product/product.router';
 
 const PORT = process.env.PORT || 6000; 
 const app = express();
@@ -18,7 +19,7 @@ mongoose
 
 // app.use("/order/", OrderRouter);
 // app.use("/users", usersRouter);
-// app.use("/products", productRouter);
+app.use("/products", productRouter);
 // app.use("/Shiping", shiping);
 // app.use("/image", ImageRouter);
 
