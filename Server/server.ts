@@ -1,6 +1,7 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import productRouter from './Resources/Product/product.router';
+import errorHandler from './Error/ErrorHandler';
 
 const PORT = process.env.PORT || 6000; 
 const app = express();
@@ -15,13 +16,15 @@ mongoose
     console.log(error);
   });
 
-  app.use(express.json());
+app.use(express.json());
 
 // app.use("/order/", OrderRouter);
 // app.use("/users", usersRouter);
 app.use("/products", productRouter);
 // app.use("/Shiping", shiping);
 // app.use("/image", ImageRouter);
+
+app.use(errorHandler);
 
 app.get("/", (_: any, res: any) => {
     console.log("Server connected");
