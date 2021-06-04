@@ -2,7 +2,7 @@ GET http://localhost:6000/products/
 
 ###
 
-GET
+GET http://localhost:6000/products/60afb4fcc695eff1f258d490
 
 ### 
 
@@ -10,12 +10,43 @@ POST http://localhost:6000/products/
 Content-Type: application/json
 
 {
-    "title": "Blue Hoodie",
+    "title": "Red Hoodie",
     "description": "bla bla bla",
     "price": 299,
     "size": "S",
     "category": "Unisex", 
-    "stock": 10, 
-    "quantity": 1
-   
+    "quantity": 1,
+    "stock": 10
 }
+
+###
+
+DELETE http://localhost:6000/products/60afb4fcc695eff1f258d490
+
+###
+ 
+PUT http://localhost:6000/products/60ba214cca201d2255faffe3
+Content-Type: application/json
+
+{
+    "title": "Green Hoodie",
+    "description": "bla Bla",
+    "price": 349,
+    "size": "M",
+    "category": "Unisex",
+    "quantity": 2,
+    "stock": 15
+}
+
+###
+
+POST http://localhost:6000/products/add-size-stock/60ba214cca201d2255faffe4 
+Content-Type: application/json
+
+{ 
+    "size": "XL", 
+    "stock": "15", 
+    "quantity": "2" 
+}
+
+###

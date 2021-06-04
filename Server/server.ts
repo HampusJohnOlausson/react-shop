@@ -18,11 +18,11 @@ mongoose
 
 app.use(express.json());
 
-// app.use("/order/", OrderRouter);
-// app.use("/users", usersRouter);
 app.use("/products", productRouter);
-// app.use("/Shiping", shiping);
-// app.use("/image", ImageRouter);
+// app.use("/images", imageRouter);
+// app.use("/orders/", orderRouter);
+// app.use("/users", usersRouter);
+// app.use("/shippings", shippingRouter);
 
 app.use(errorHandler);
 

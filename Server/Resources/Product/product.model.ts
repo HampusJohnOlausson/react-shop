@@ -10,10 +10,11 @@ interface Product {
   stock: number,
 }
 
-const productVariant = new mongoose.Schema({
+const ProductVariant = new mongoose.Schema({
     size: String, 
     stock: Number, 
-    quantity: Number
+    quantity: Number,
+    title: String,
 })
 const productSchema = new mongoose.Schema({
   title: {
@@ -44,17 +45,12 @@ const productSchema = new mongoose.Schema({
     min: [0, "Price must be a positive number"],
   },
   category: {
-    type: String,
+    type: [
+      String,
+    ],
     required: true,
-    validate: {
-      validator: function (value: any) {
-        const titleRegex = /^[a-öA-Ö\s,'-]+$/;
-        return titleRegex.test(value);
-      },
-      message: "Category must be a string",
-    },
   },
-  variants: [productVariant],
+  variants: [ProductVariant],
 });
 
 module.exports = mongoose.model<Product>('Products', productSchema);
