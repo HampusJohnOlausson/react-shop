@@ -1,0 +1,14 @@
+POST http://localhost:6000/image/uploadImage 
+Content-Type: multipart/form-data; boundary=Row
+
+--Row 
+Content-Disposition: form-data; name="image"; filename="38a.jpg" Content-Type: image/jpeg
+
+< ./rockShirt.jpg
+
+ --Row--
+
+### 
+
+GET http://localhost:6000/image/getImage/60ae45846fd9781d0d38e219
+

@@ -1,13 +1,13 @@
 import express, { Request, Response } from 'express';
 const controller = require('./order.controller');
 
-const OrderRouter = express.Router();
+const orderRouter = express.Router();
 
-OrderRouter.post('/add-order', controller.addOrder)
-OrderRouter.get('/all-orders', controller.getOrders);
-OrderRouter.get('/specific-order/:id', controller.getSpecific)
-OrderRouter.get('user-orders/:id', controller.getUserOrders)
-OrderRouter.patch('/sent-order/:id', controller.orderSent)
-OrderRouter.get('order-test', async(req: Request, res: Response) => res.send('order-test'))
+orderRouter.post('/add-order', controller.addOrder)
+orderRouter.get('/all-orders', controller.getOrders)
+orderRouter.get('/specific-order/:id', controller.getSpecific)
+orderRouter.get('/user-orders/:id', controller.getUserOrders)
+orderRouter.patch('/sent-order/:id', controller.orderSent)
+orderRouter.get('/order-test', async(req: Request, res: Response) => res.send('order-test'))
 
-export default OrderRouter;
+export default orderRouter;

@@ -4,7 +4,6 @@ const Products = require('../Product/product.model')
 const ErrorApi = require('../../Error/ErrorApi')
 import { Request, Response, NextFunction } from 'express';
 
-
 module.exports.addOrder = async (req: Request, res: Response, next: NextFunction) => {
     const { orderNumber, products, customer, orderAmount, shipment } = req.body; 
     const productVariant: any = []

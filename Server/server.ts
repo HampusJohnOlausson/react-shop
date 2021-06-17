@@ -1,6 +1,8 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import productRouter from './Resources/Product/product.router';
+import imageRouter from './Resources/Image/image.router';
+import orderRouter from './Resources/Order/order.router';
 import errorHandler from './Error/ErrorHandler';
 
 const PORT = process.env.PORT || 6000; 
@@ -19,8 +21,8 @@ mongoose
 app.use(express.json());
 
 app.use("/products", productRouter);
-// app.use("/images", imageRouter);
-// app.use("/orders/", orderRouter);
+app.use("/image", imageRouter);
+//app.use("/orders/", orderRouter);
 // app.use("/users", usersRouter);
 // app.use("/shippings", shippingRouter);
 

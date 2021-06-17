@@ -26,7 +26,7 @@ const upload = multer({
 });
 
 ImageRouter
-.post('uploadImage', upload.single('image'), controller.uploadImage)
+.post('/uploadImage', upload.single('image'), controller.uploadImage)
 .get('./getImage/:id', controller.getImage)
 
 export default ImageRouter
